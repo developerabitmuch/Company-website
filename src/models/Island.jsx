@@ -13,10 +13,81 @@ import { a } from "@react-spring/three";
 
 import islandScene from "../assets/3d/island.glb";
 
-const Island = (props) => {
+// Island mein jo props send kre hain hmne wo destructure krleinge hm
+// props include the islandScale, islandPosition & isRotating setIsRotating jo function hai
+// khali isRotating aur setIsRotating hmne destructure krlie hain aur baki sare props ...props mein bulalie hain
+const Island = ({ isRotating, setIsRotating, ...props }) => {
   const islandRef = useRef();
+
   // Jo file hai hmare pass model ki 3d glb wo deinge input mein hm
   const { nodes, materials } = useGLTF(islandScene);
+
+  // Threejs Renderer & viewport
+  const { gl, viewport } = useThree();
+
+  // getting the last mouse position on X axis
+  const lastX = useRef(0);
+
+  // rotation Speed
+  const rotationSpeed = useRef(0);
+
+  // damping factor yh ghumane mein kaam aega aur jb chordenge to slow krne mein kaam aega yh
+  const dampingFactor = 0.95;
+
+  // Rotate krne liye hmein functions chahiye hote hain aur wo jb chaleinge
+  // jb hm mouse se move kreinge ya hm jb keyboard se move kreinge isko
+  // jb mouse se holde kreinge to yh function kaam krega
+  const handlePointerDown = (e) => {
+    // e.propogation se usi function pe mouse koi change krega baki kisi aur pe nhi krega mouse koi change
+    e.stopPropagation;
+    // hmein reload page ka nhi chahiye hai to hm kreinge
+    e.preventDefault();
+    // ab kionke hmne mouse ko hold krlia hai to rotate krna shuru hojaega 3d model hmara
+    setIsRotating(true);
+
+    // Ab hm dekheinge ke yh mouse ka event hai ya touch ka event hai screen pe to us hisab se move kreinge
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+
+    // saving the last position before stopping
+    lastX.current = clientX;
+  };
+
+  // jb hm mouse release kr chuke hnge yh function kaam krega
+  const handlePointerUp = (e) => {
+    // e.propogation se usi function pe mouse koi change krega baki kisi aur pe nhi krega mouse koi change
+    e.stopPropagation;
+    // hmein reload page ka nhi chahiye hai to hm kreinge
+    e.preventDefault();
+    // mouse release hogya hai to isRotating ko false krdeinge
+    setIsRotating(false);
+
+    // up mein hm delta ko check kreinge apne pass ke kia hai change hoa hai hmare pass aur us change ko hm kis trhn leinge
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+
+    // delta nikal leinge jo change aya hai hmare pass
+    // viewport hmare pass ai hai useThree ke hook se
+    const delta = (clientX - lastX.current) / viewport.width;
+
+    // based on the mouse hm island ki rotation ko update kreinge apne pass
+    // top/down - y axis pe rotation update krdi hai hmne
+    islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+
+    // update the x position
+    lastX.current = clientX;
+
+    // rotation speed ko update krleinge hm
+    rotationSpeed.current = delta * 0.01 * Math.PI;
+  };
+
+  // jb mouse move krrha hoga bs tb hm is function ko chalaeinge aur bs hm
+  const handlePointerMove = (e) => {
+    // e.propogation se usi function pe mouse koi change krega baki kisi aur pe nhi krega mouse koi change
+    // Prevent the click event from bubbling up
+    e.stopPropagation;
+    // hmein reload page ka nhi chahiye hai to hm kreinge
+    e.preventDefault();
+  };
+
   return (
     <a.group {...props} ref={islandRef}>
       <mesh

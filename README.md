@@ -54,7 +54,116 @@
 ### Lighting:
 
 - Lighting plays an important role in the 3D model.
-- Directional Light is the light coming from the distance source just like sun -
+- Directional Light is the light coming from the distance source just like sun ;
+  <directionalLight position={[1, 1, 1]} intensity={2} />
+- position -- yh attribute btata hai light khn pe marni hai.
+- intensity -- yh attribute btata hai ke light kis intensity se mareinge
+- Ambient Light mein shadows nhi hote yh light har jagah aik si hi jati hai
+  <ambientLight intensity={0.5} />
+- Point Light emits the light from one particular source.
+- spotlight is similar to pointlight but it somehow provides an angle all the way.
+- Hemisphere light mein hm color bhi btaskte hain
+  <hemisphereLight
+            skycolor="b1e1ff"
+            groundColor="#000000"
+            intensity={1}
+          />
+- After adding lights to the scene, you can configure their properties such as color, intensity, position, and direction using props. Each type of light has specific props for controlling its behavior and appearance.
+- hm yh sare props jo hain wo apply krkste hain light ke uper
+- Positioning and Orienting Lights:
+  Lights can be positioned and oriented in 3D space using their position, rotation, and lookAt props. This allows you to control the direction and intensity of light within the scene.
+
+## 3D - Sky;
+
+- Same kaam krna hai hmne models mein hmne sky ki file bnani hai aur phr mesh uthake leke aeinge hm .dlb ko change krke.
+- mesh ke tag ke andar hona zrori hai isko root element mein wrna kaam nhi krega yh.
+- const sky = useGLTF(skyScene); -- skyscene ki file jo dlb wali hai usko use krrhe hain.
+- island ki file mkein bht sare meshes hain aur hm unbhtsare meshes ko move kreinge rotate kreinge aur phr hm unpe effects implement kreinge lekin yhn pe hmare pass sky mein aik hi mash hai
+- Inside the <mesh>, we use the <primitive> component to render the 3D sky scene. The <primitive> component allows us to render any Three.js object or hierarchy.
+- Mesh:
+
+A mesh represents a single 3D object with geometry (shape) and material (appearance).
+It is typically used to represent individual objects such as a cube, sphere, or custom model.
+Meshes can have properties like position, rotation, and scale that affect their appearance and behavior.
+Each mesh is rendered as a separate entity in the scene and can have its own material and texture applied to it.
+
+- Group:
+
+A group is a container object used to group multiple meshes or other objects together.
+It does not have its own geometry or material but serves as a way to manage and manipulate multiple objects collectively.
+Groups can be used to organize related objects, apply transformations to multiple objects simultaneously, or control the visibility of multiple objects at once.
+They are particularly useful when you have a collection of objects that need to be moved, rotated, or scaled together.
+
+- n React Three Fiber (R3F), the <primitive> component is used to render any Three.js object directly within a React component. It allows you to leverage the full power of Three.js and integrate custom or complex 3D objects seamlessly into your R3F application. Here are some scenarios where you might want to use the <primitive> component:
+-       <primitive object={sky.scene} />  -- this is the primitive tag we used actually to render the sky that was imported using the useGLTF by drei.
+- the reason why we used sky as a 3d.gbl image is that when we rotate the island image so we will going to see that we are in a sphere that is 3-dimentional instead we just rotate in 2D.
+
+## Bird and Plane;
+
+- we will going to use the plane and bird to move above this scenario and for that we will going to use them inside the model.
+- we will be animating the bird and we will be calling the scene inside the object.
+- <primitive object={scene} /> -- primitive mein object mein bird ko call krlia hai hmne yhn pe
+- Mesh ke attributes ko use kreinge hm yhn pe jese ke position aur scale ke attribute ko hm use kreinge.
+- <mesh position={[-5, 2, 1]} scale={[0.003, 0.003, 0.003]}>
+  <primitive object={scene} />
+  </mesh>
+- The position prop defines the position of the mesh in 3D space using an array of three numbers [x, y, z].
+  In this case, the mesh is positioned at coordinates [-5, 2, 1], which means it's located 5 units to the left (negative x-axis), 2 units up (positive y-axis), and 1 unit forward (positive z-axis) from the origin (0, 0, 0).
+
+- The scale prop defines the scale of the mesh along the x, y, and z axes using an array of three numbers [xScale, yScale, zScale].
+  In this case, the mesh is scaled down by a factor of 0.003 along all axes, making it much smaller compared to its original size.
+  Scaling a mesh affects its size but not its position or orientation.
+
+- we have used the mesh to While HTML <div> elements are suitable for building 2D user interfaces on the web, they lack the necessary features and capabilities to represent 3D geometry and render complex 3D scenes efficiently. Additionally, HTML and CSS are not designed for real-time 3D rendering and lack the advanced features required for 3D graphics applications. Therefore, in the context of 3D graphics programming, meshes are the standard representation for defining and rendering 3D objects within a scene.
+- Plane ke liye bhi aik function bnaleinge hm to adjust it according to the requirement of the screen sizes take adjust hojae.
+
+- const Planee = ({ isRotating, ...props }) => --
+
+hmne home mein component call kraya hai yh plane ka aur props pass kre hain whn pe hmne ismein planeScale, planePosition, isRotating, Rotation jo ke fixed rkhdi hai hmne.
+Ab plane ke component ke andar hm in props ko destructure krleinge apne pass lekin yhn hm destructre aise krrhe hain isRotating khali call krrhe hain apne passs aur uske ilawa hm ...props - spread operater ke sath hm props call krrhe hain yhn pe.
+mesh mein hm sedhe sedhe {...props} derhe hain
+Isse hmara plane ke direction change hogae hai hmare pass mtlb hm ispe khelskte hain
+
+## Threejs renderer and viewport
+
+- Threejs render aur viewport jo hain hm wo deinge all the way hm import krke useThree() - react three fiber se.
+- In React Three Fiber (R3F), the useThree hook is a utility provided by the library @react-three/fiber. It allows you to access and interact with the core Three.js components and settings within your R3F application.
+- Access to the Three.js Scene: You can access the main Three.js scene instance, which represents the 3D scene where all objects are rendered. -- scene
+- Access to the Three.js Renderer: You can access the Three.js renderer instance, which handles the rendering of the 3D scene onto the HTML canvas. -- gl
+- Access to the Three.js Camera: You can access the Three.js camera instance, which determines the view and perspective of the 3D scene. -- camera
+- Other Configuration and Utilities: useThree provides access to various other configuration options and utilities, such as setting the size of the viewport, adjusting the pixel ratio, and more.
+
+- import { useThree } from '@react-three/fiber';
+
+function MyComponent() {
+const { scene, camera, gl } = useThree();
+
+// You can now interact with scene, camera, and gl here
+
+return (
+<>
+{/_ Your R3F components _/}
+</>
+);
+}
+
+By the above technique we can use the hook useThree() and by using this we will be able to use the renderer(gl), scene and the camera into our component.
+
+## Position:
+
+- hmare pass sare elements showcase horhe hain island,sky,bird -- hmare pass jo elements showcase horhe hain.
+- hmne krna yh hai ke kuch elements ki position absolute krni hai to uske liye hm position ke axis ke jo array hain unko move krleinge apne hisab se
+- 3d objects ke models ke mesh ko hm position dedeinge all the way aur unko hm scale bhi deskte hain as a parameter.
+
+## Rotation:
+
+- Rotation mein hm jo logic lgaeinge wo logic to hai hi position ki, hmari position change hojaegi jb hm rotate kreinge
+- Drag mein drop feature pe hm rotating apply kreinge all the way
+- cursor grabbing ko applyb krdeinge hm rotation pe
+- hmare pass 3 scezein hain lastX(scroll value hai yh 3 chezon ki), rotation speed, damping factor yh spin krne mein help kregi.
+- hm khali hold nhi kreinge island ko balke grab krke hold kreinge hm island ko aur phr hm move kreinge to in sb ko handle krne ke liye hmare pass functions hnge alag alag sb chezon ke liye.
+- Rotation mein sbse important factor jo kaam ka hai hmara wo hai mouse se jb hm move kreinge up and down to kis trhn se hmare pass screen pe rotate hoga, uske ilawa dosra factor jo sbse important hai hmare pass wo hai keyboard ka ke kis trhn se move krega jb hm keyboard pe up and down keys press kreinge.
+- uske bad jb hm mouse ya keyboard chordeinge to speed damping factor ki sorat mein slow hogi aur is trhn se hm control krleinge rotation ko.
 
 ##### Extra Learning:
 
@@ -67,3 +176,10 @@
 - h-screen -- When you apply the h-screen class to an element, it expands the element vertically to fill the entire height of the viewport.
 - When the DataComponent is asynchronously loaded (e.g., using React.lazy for code-splitting), the Suspense component will suspend rendering and show the fallback UI until the component and its data are ready to be displayed -- suspense component hmare pass jo use hota hai ismein hmein faida yh hota hai ke loading hojati hai phle aur phr bad mein hmein jb data ajata hai api ka to wo show krdeta hai aur jb tk koi aur sa loading component show krdeta hai
 - Loader ke component mein hmne spinner bnadia hai css se animate property lgake aur suspense mein call krlia hai hmne yh component - w-20 h-20 border-2 border-opacity-20 border-blue-500 border-t-blue-500 rounded-full animate-spin
+- eslintrc mein hm apne pass src add krdeinge aur phr isse hoga yh ke hmare pass lig
+- useGLTF hook jo hm import krte hain drei se uski madad se hm apni 3D images ko screen pe show krwaskte hain all the way.
+- we can get the positions from the useState as well and we can get things done all the way and we can also manipulate it.
+- we can use useSpring hook to actually maintain the position as well and by using this we can animate the 3D model all the way in our application.
+- cursor-grab: initially jb kisi chez ko pakarna hoga to hm yh class use kreinge.
+- cursor-grabbing: jb koi chez hm grab kr chuke hnge to hm usko move krte we grabbing ki class ko use kreinge apne pass.
+- e.propagation -- Prevent the click event from bubbling up.
