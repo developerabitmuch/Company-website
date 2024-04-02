@@ -1,12 +1,3 @@
-{
-  /* popup on home screen  */
-}
-{
-  /* <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-Popup
-</div> */
-}
-
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import Loader from "../components/Loader";
@@ -20,6 +11,9 @@ const Home = () => {
   // Rotation apply krne ke liye hmein posotion change krni hogi object ki
   // state bnali hai hmne rotating ke liye
   const [isRotating, setIsRotating] = useState(false);
+
+  // current stage ki aik state bnaeinge aur pass kreinge Island mein isko
+  const [currentStage, setCurrentStage] = useState(1);
 
   // 3D model ko adjust krdeinge hm according to the screen size
   // abhi model show horha hai lekin adjust nhi hoa wa hai hmare pass yh model so we will going to
@@ -66,8 +60,13 @@ const Home = () => {
   const [planeScale, planePosition] = adjustPlaneForScreenSize();
 
   return (
-    <section className="w-full h-screen relative bg-gradient-to-b from-blue-400  to-blue-00 ">
-      {/* 3D Screen */}
+    <section className="w-full h-screen relative  ">
+      {/* popup on home screen  */}
+      <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
+        Popup
+      </div>
+
+      {/* 3D Screen Animation*/}
       <Canvas
         className={`w-full h-screen bg-transparent ${
           isRotating ? "cursor-grabbing" : "cursor-grab"
@@ -88,7 +87,8 @@ const Home = () => {
           {/* bird that will move */}
           <Bird />
           {/* sky 3D image */}
-          <Sky />
+          {/* moving the sky as well when isRotating is true */}
+          <Sky isRotating={isRotating} />
           {/* island .dlb 3D image rendered*/}
           {/* island mein rotating ki state aur function pass krdeinge agr island ko rotate krna hai hmne aur destructure kreleinge component mein */}
           <Island
@@ -97,8 +97,10 @@ const Home = () => {
             rotation={islandRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
           />
-          {/* plane that will fly */}
+
+          {/* plane that will fly
           {/*  plane scale & plane position as well as state isRotating derhe hain aur rotation fixed parameters derhe hain inko destructure krleinge hm component mein aur hm mesh mein inko use krleinge  */}
           <Planee
             isRotating={isRotating}

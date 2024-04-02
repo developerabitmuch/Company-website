@@ -155,15 +155,51 @@ By the above technique we can use the hook useThree() and by using this we will 
 - hmne krna yh hai ke kuch elements ki position absolute krni hai to uske liye hm position ke axis ke jo array hain unko move krleinge apne hisab se
 - 3d objects ke models ke mesh ko hm position dedeinge all the way aur unko hm scale bhi deskte hain as a parameter.
 
-## Rotation:
+## Rotation of Island:
 
 - Rotation mein hm jo logic lgaeinge wo logic to hai hi position ki, hmari position change hojaegi jb hm rotate kreinge
 - Drag mein drop feature pe hm rotating apply kreinge all the way
-- cursor grabbing ko applyb krdeinge hm rotation pe
+- cursor grabbing ko apply krdeinge hm rotation pe
 - hmare pass 3 scezein hain lastX(scroll value hai yh 3 chezon ki), rotation speed, damping factor yh spin krne mein help kregi.
 - hm khali hold nhi kreinge island ko balke grab krke hold kreinge hm island ko aur phr hm move kreinge to in sb ko handle krne ke liye hmare pass functions hnge alag alag sb chezon ke liye.
 - Rotation mein sbse important factor jo kaam ka hai hmara wo hai mouse se jb hm move kreinge up and down to kis trhn se hmare pass screen pe rotate hoga, uske ilawa dosra factor jo sbse important hai hmare pass wo hai keyboard ka ke kis trhn se move krega jb hm keyboard pe up and down keys press kreinge.
 - uske bad jb hm mouse ya keyboard chordeinge to speed damping factor ki sorat mein slow hogi aur is trhn se hm control krleinge rotation ko.
+- hmne 3 functions bnai hain handlePointerUp, handlePointerDown, handlePointerMove -- yh isliye bnae hain hmne take jb mouse se drag krien screen ko to wo functionality chal jae uspe.
+- gl,handlePointerDown,handlePointerUp,handlePointerMove -- jb yh change hn chezein to bs hmare pass useEffect mein jo component did mount hai wo run hojae hmare pass.
+- document.addEventListener("pointerdown", handlePointerDown);
+  document.addEventListener("pointerup", handlePointerUp);
+  document.addEventListener("pointermove", handlePointerMove);
+
+  yh sare event listeners hmne bnae hain aur hm inko use kreinge apne pass aur phr hm inpe function sjo bnae hain wo apply krdeinge bs.
+
+- hmne keys ke liye functions bnalie hain aur wo function hm useEffect mein eventListeners mein use krleinge apne pass all the way
+- hm ab jo bhi hmne bnaye hain eventListeners yh sb hm use krienge apne pass aur sare handle functions mouse aur keyboard ke to bs ab hm jo kreinge wo yh hai ke bs insb ko use kreinge aur threejs mein in sb ko use krne ke liye jo chez sbse important use hoti hai hmare pass wo hai useFrame hook
+- useFrame mein hme jitne frames mein bhi move krrha hai usko use krna hai apne pass ke kis trhn se move krrha hai
+- normal tarike se hmne eventlisteners bnadie hain yh kaam nhi kreinge hmne inko document pe nhi blke canvas pe chalana hoga
+- canvas get krrhe hain -- canvas hai 3D renderer ka DOM Element.
+- Jitne functions bnae hain sara kaam ref pe horha hai hmare pass aur hm ref ko group mein derhe hain.
+
+## Animation on Plane & Sky:
+
+- Primitive tag ka faida yh hai ke baghair kisi mesh ke geometry ke hm direct scene call krskte hain primitive tag ke andar.
+- Flexibility and Customization: You can customize the appearance and behavior of the 3D object by adjusting its properties and attributes directly within the <primitive> tag. This includes applying textures, materials, and complex geometries -- primitive tag mein attributes lgaleinge hm apne pass aur dosra yh ke hm primitive ko use kreinge kionke primitive tag sari complexities htake aata hai aur bs hm is tag ke andar apna 3d models ke scene call krleinge.
+- Its easy to apply the animation on the plane coz its inside the primitive tag.
+- const { actions } = useAnimations(animations, ref); -- useAnimations ka hook hai react-three/drei library se aur phr hm isko use kreinge apne pass aur bs hm actions ko use krte we frames hmein useFrames se call krke animation apply krdeinge primitive tag mein simply all the way.
+- actions['Take 001'].play() -- ke builtin methods use krleinge hm
+- error derha hai aur code break horha hai hmara hm kreinge yh ke state ko log krke error ko fix kreinge.
+- Simple hmne call krlie hain methods action ke useEffect ke andar bs animate krne ke liye.
+- hmne Sky pe bhi frames add krdie hain take 3d image lge move hoti wi.
+
+## Animation on Bird
+
+- Ref create kreinge aur mesh mein ref dedeinge uske ilawa actions find krleinge all the way aur hm actions pe animation apply kreinge all the way phr useEffect ke andar hm actions pe methods apply krdeinge all the way.
+- phr according to the usecase hm rotation, size aur position ko execute krdeinge apni bird mein.
+- har frame pe bird move krni chahiye hai hmare pass to hm useFrame use krrhe hain - uske ilawa hm sin wave maths ki use krrhe hain take rotate krein bird ko aur bari se choti ho aur choti se bari hojae
+
+## POPUP coming in Home Screen after rotation
+
+- Popup show hoega jb screen rotate hojaegi particular position tk aur phr hm popup pe click kreinge to hmein dosre page pe lejaegi screen redirect krke.
+- Popup screen par hi hai hmein isko showcase krna hai jb rotate hoke aik position ajae camera ki to hm isko implement kreinge.
 
 ##### Extra Learning:
 
@@ -183,3 +219,4 @@ By the above technique we can use the hook useThree() and by using this we will 
 - cursor-grab: initially jb kisi chez ko pakarna hoga to hm yh class use kreinge.
 - cursor-grabbing: jb koi chez hm grab kr chuke hnge to hm usko move krte we grabbing ki class ko use kreinge apne pass.
 - e.propagation -- Prevent the click event from bubbling up.
+- Aik sbse important chez yh hai ke hm primitive tag ke andar geometry call krleinge 3D element ki aur phr uske ilawa hm material bhi call krleinge aur uske ilawa hm position bhi call krleinge -- geometry se murad jese boxGeometry to builtin hmare pass ajaega box uske bad material jo hmne use kra hai usmein hmare pass color aega ke kia color hm use krrhe hain aur phr uske bd position hai ke kia position hai x,y,z axis pe aur coordinates kia hain.

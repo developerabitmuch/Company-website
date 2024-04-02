@@ -16,7 +16,8 @@ import islandScene from "../assets/3d/island.glb";
 // Island mein jo props send kre hain hmne wo destructure krleinge hm
 // props include the islandScale, islandPosition & isRotating setIsRotating jo function hai
 // khali isRotating aur setIsRotating hmne destructure krlie hain aur baki sare props ...props mein bulalie hain
-const Island = ({ isRotating, setIsRotating, ...props }) => {
+// Set Current stage import hone ke bad se errors nhi aeinge hmare pass
+const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
   const islandRef = useRef();
 
   // Jo file hai hmare pass model ki 3d glb wo deinge input mein hm
@@ -46,6 +47,7 @@ const Island = ({ isRotating, setIsRotating, ...props }) => {
     setIsRotating(true);
 
     // Ab hm dekheinge ke yh mouse ka event hai ya touch ka event hai screen pe to us hisab se move kreinge
+    // mouse event hai ya touch event screen pe
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
 
     // saving the last position before stopping
@@ -60,23 +62,6 @@ const Island = ({ isRotating, setIsRotating, ...props }) => {
     e.preventDefault();
     // mouse release hogya hai to isRotating ko false krdeinge
     setIsRotating(false);
-
-    // up mein hm delta ko check kreinge apne pass ke kia hai change hoa hai hmare pass aur us change ko hm kis trhn leinge
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-
-    // delta nikal leinge jo change aya hai hmare pass
-    // viewport hmare pass ai hai useThree ke hook se
-    const delta = (clientX - lastX.current) / viewport.width;
-
-    // based on the mouse hm island ki rotation ko update kreinge apne pass
-    // top/down - y axis pe rotation update krdi hai hmne
-    islandRef.current.rotation.y += delta * 0.01 * Math.PI;
-
-    // update the x position
-    lastX.current = clientX;
-
-    // rotation speed ko update krleinge hm
-    rotationSpeed.current = delta * 0.01 * Math.PI;
   };
 
   // jb mouse move krrha hoga bs tb hm is function ko chalaeinge aur bs hm
@@ -86,7 +71,136 @@ const Island = ({ isRotating, setIsRotating, ...props }) => {
     e.stopPropagation;
     // hmein reload page ka nhi chahiye hai to hm kreinge
     e.preventDefault();
+
+    // Jb move krrhe hn to bs handle pointer up ko call krleinge hm
+    // Jb move kreinge to bs hm to rotate kreinge bs aur bs rotate ki logic bnaeinge hm apne pass
+    if (isRotating) {
+      // up mein hm delta ko check kreinge apne pass ke kia hai change hoa hai hmare pass aur us change ko hm kis trhn leinge
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+
+      // delta nikal leinge jo change aya hai hmare pass
+      // viewport hmare pass ai hai useThree ke hook se
+      const delta = (clientX - lastX.current) / viewport.width;
+
+      // based on the mouse hm island ki rotation ko update kreinge apne pass
+      // top/down - y axis pe rotation update krdi hai hmne
+      // Math.PI is liye use krrhe hain kionke circle hai yh
+      islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+
+      // update the x position
+      lastX.current = clientX;
+
+      // rotation speed ko update krleinge hm
+      rotationSpeed.current = delta * 0.01 * Math.PI;
+    }
   };
+
+  // hmne mouse ke events ko to makesure krlia hai aur apne pass use krlia hai ab hm keyboard ke events pe functionality lgadeinge
+  // down arrow key ke event listener pe yh function run kreinge hm
+  const handleKeyDown = (e) => {
+    if (e.key === "ArrowLeft") {
+      if (!isRotating) setIsRotating(true);
+      // Position set krrhe hain hm jb arrow key dba rhe hain hm
+      islandRef.current.rotation.y += 0.01 * Math.PI;
+    } else if (e.key === "ArrowRight") {
+      if (!isRotating) setIsRotating(true);
+      // Position set krrhe hain hm jb arrow key dba rhe hain hm
+      islandRef.current.rotation.y -= 0.01 * Math.PI;
+    }
+  };
+
+  // handling key up take stop krde rotating
+  const handleKeyUp = (e) => {
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      setIsRotating(false);
+    }
+  };
+
+  // useEffect bnainge aur yh sare jo functions bnae hain hmne to yh sare functions hm useEffect mein use kreinge
+  // Dependency array mein hm jo bhi chezein daleinge wo change hngi hmare pass to useEffect run hojaega
+  // gl,handlePointerDown,handlePointerUp,handlePointerMove -- jb yh change hn chezein to bs hmare pass useEffect mein jo component did mount hai wo run hojae hmare pass
+  // Keyboard ki keys ke bhi event listeners bnaleinge hm
+  useEffect(() => {
+    // normal tarike se hmne eventlisteners bnadie hain yh kaam nhi kreinge hmne inko document pe nhi blke canvas pe chalana hoga
+    // canvas get krrhe hain -- canvas hai 3D renderer ka DOM Element.
+    const canvas = gl.domElement;
+    // Hmein evenlisteners bnane hnge
+    // phle wale 3no eventListners ke liye hm canvas ko use kreinge kionke hm canvas ko touch krrhe hain screen ko nhi
+    canvas.addEventListener("pointerdown", handlePointerDown);
+    canvas.addEventListener("pointerup", handlePointerUp);
+    canvas.addEventListener("pointermove", handlePointerMove);
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keyup", handleKeyUp);
+
+    // Remove bhi krdeinge hm eventListeners ko jese hi hm exit kreinge
+    return () => {
+      canvas.removeEventListener("pointerdown", handlePointerDown);
+      canvas.removeEventListener("pointerup", handlePointerUp);
+      canvas.removeEventListener("pointermove", handlePointerMove);
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
+
+  // useFrame apply krdeinge hm aur yh har aik function pe apply hoga useFrame
+  // useFrame ki madad se hm bs yh sb functions implement krdeinge
+  useFrame(() => {
+    if (!isRotating) {
+      // speed slowly slowly ruke to damping factor apply krrhe hain
+      rotationSpeed.current *= dampingFactor;
+
+      // agr speed bht slow hai to bs rokde rotation
+      if (Math.abs(rotationSpeed.current) < 0.001) {
+        rotationSpeed.current = 0;
+      }
+
+      // Smooth rotation se slow krrhe hain hm speed ko
+      // Ab jb hm move krrhe hain aur chor rhe hain to yh gradully slow horha hai
+      islandRef.current.rotation.y += rotationSpeed.current;
+    } else {
+      // agr rotate krrha hai to phr hm rotation mein apply krdeinge
+      // Jb speed bhaag rhi hai to phr hm isko use krienge apne pass aur isse bhaagega.
+      // When rotating, determine the current stage based on island's orientation
+      const rotation = islandRef.current.rotation.y;
+
+      /**
+       * Normalize the rotation value to ensure it stays within the range [0, 2 * Math.PI].
+       * The goal is to ensure that the rotation value remains within a specific range to
+       * prevent potential issues with very large or negative rotation values.
+       *  Here's a step-by-step explanation of what this code does:
+       *  1. rotation % (2 * Math.PI) calculates the remainder of the rotation value when divided
+       *     by 2 * Math.PI. This essentially wraps the rotation value around once it reaches a
+       *     full circle (360 degrees) so that it stays within the range of 0 to 2 * Math.PI.
+       *  2. (rotation % (2 * Math.PI)) + 2 * Math.PI adds 2 * Math.PI to the result from step 1.
+       *     This is done to ensure that the value remains positive and within the range of
+       *     0 to 2 * Math.PI even if it was negative after the modulo operation in step 1.
+       *  3. Finally, ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI) applies another
+       *     modulo operation to the value obtained in step 2. This step guarantees that the value
+       *     always stays within the range of 0 to 2 * Math.PI, which is equivalent to a full
+       *     circle in radians.
+       */
+      const normalizedRotation =
+        ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+
+      // Set the current stage based on the island's orientation
+      switch (true) {
+        case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
+          setCurrentStage(4);
+          break;
+        case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
+          setCurrentStage(3);
+          break;
+        case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
+          setCurrentStage(2);
+          break;
+        case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
+          setCurrentStage(1);
+          break;
+        default:
+          setCurrentStage(null);
+      }
+    }
+  });
 
   return (
     <a.group {...props} ref={islandRef}>
