@@ -200,8 +200,74 @@ By the above technique we can use the hook useThree() and by using this we will 
 
 - Popup show hoega jb screen rotate hojaegi particular position tk aur phr hm popup pe click kreinge to hmein dosre page pe lejaegi screen redirect krke.
 - Popup screen par hi hai hmein isko showcase krna hai jb rotate hoke aik position ajae camera ki to hm isko implement kreinge.
+- Aik component bnana hai hmne HomeInfo aur phr us component ke andar hmne bs pass krdeinge currentStage as a props bs.
+- Current Stage ki aik state bnaleinge hm aur uski jo stage bnai hai hmne usko dekhte we hmare pass yh show krega popup specific position pe.
+- jb hmare pass current stage ki values change hngi to hmare pass diffrent popups show krega yh to hm isko krne ke liye homeInfo ke componnet ke andar hm aik object bnaleinge aur according to the state object ki values rerturn hojaeingi hmare pass.
+- Different Popups show horhe hain hmein different currentStage ki values pe aur phr us hisab se hm redirect krrhe hain different pages pe
 
-##### Extra Learning:
+## Contact Page:
+
+- heading aur phr labels aur inputs define krdie hain aur style krdie hain uske bad hmne functionality add krne ke liye fox ko move krne ke liye speed mein hmne onFocus aur onBlue builtin function hain yh use kreinge hm.
+- onFocus -- attribute hai isse hota yh hai ke jb hm focus kreinge aur likheinge kisi input mein to yh builtin is liye hai.
+- onBlur -- attribute hai yh isliye hai ke jb hm mitaeinge to yh builtin hai isliye.
+- textarea -- ke tag ko use kreinge hm message likhne ke liye.
+- functions bnalie hain hmne sare handleChange, handleSubmit, handleFocus & handleBlur -- aur iski madad se hm inpe sari logics apply krrhe hain.
+- Email ka package hm use krrhe hain take form ke submit pe hmare pass email ajae. -- npm install @emailjs/browser
+- focus aur blur se hm makesure kreinge what is happening all the way aur phr according to it hm fox ko move kreinge
+
+### Emailjs -- npm install @emailjs/browser
+
+- Email ka yh package hm use krleinge apne pass take submit form pe email send krein.
+- emailjs ki website pe jake hm email send krte we 4 properties hain unko use krleinge apne pass as an argument aur wo hm console se utha leinge like service_ID, template_ID, public key.
+- yh keys and id hm as a parameter pass kreinge when sending an email.
+- service_Id -- leleinge hm jo email ki service use kreinge usse connect krke service_id leleinge hm.
+- template_id -- template id hm leleinge jhn se hmne template lia hai -- whn hmne settings mein jake leleinge template id
+- public_key -- account mein jake public key leleinge.
+- form {} -- in the form object we will going to add the values we will be putting in all the way.
+
+## Fox Animation in the contact page:
+
+- Is animation mein hm yh kreinge ke logic yh lgegi ke jb hm form pe focus kreinge to hm jb type kreinge to fox move krna start hojaegi aur phr jb hm submit kreinge form ko to phr fox bhagegi tezi se.
+- model mein hm fox.jsx bnaleinge aik file
+- hm drag krleinge https://gltf.pmnd.rs/ yhn pe 3d fox ko aur phr hm jo jsx bnegi usko copy paste krdeinge fox ke component mein.
+
+## GSAP Animation:
+
+// Define the GSAP animation
+useEffect(() => {
+// gsap.from method
+// gsap.from(groupRef.current.position, {
+// duration: 2,
+// y: -10, // Move the logo downwards by 10 units
+// ease: "power3.out", // Use an easing function
+// delay: 1, // Delay the animation by 1 second
+// });
+
+    // gsap.fromto method
+    gsap.fromTo(
+      groupRef.current.position, // Target object
+      { x: 0 }, // Starting state
+      {
+        x: 10,
+        duration: 2,
+        ease: "power3.out",
+        delay: 1,
+        repeat: -1, // Repeat infinitely
+        repeatDelay: 1, // Delay before each repeat
+      } // Ending state
+    );
+
+}, []); // Run only once when component mounts
+
+## Animating Logo on Home Screen: npm i framer-motion framer-motion-3d
+
+- useFrame ko use krte we hm rotate kreinge apne cube ke logo ko apne pass.
+- logoRef.current.rotation.x += 0.015; -- useFrame mein hm is trhn se use kreinge ref ko to rotate according to our need on x-axis or y-axis.
+- orbitControls se hm kreinge move apne cube ko.
+- <OrbitControls enableZoom={false} enablePan={false} /> -- enable zoom ko hm false krdeinge hm to hm jo zoom krrhe the wo nhi hoga aur phr agar enable pen ko bhi hm false krdeinge to phr yh move nhi krega.
+- Framer motion ko bhi use krskte hain hm apne pass lekin drei ke packages ko use krke bht asan hai kaam krna
+
+# Extra Learning:
 
 - Tailwind ki utility classes ko hmne use kra hai ismein all the way aur sbse phle hmne environment set krlia hai apne pass Tailwind.config.js ko update krke.
 - navbar ka root element html-5 ka header tag rkha hai jo ke semantic element hai aur isko use krte we semantic element hai faida hoga
@@ -220,3 +286,9 @@ By the above technique we can use the hook useThree() and by using this we will 
 - cursor-grabbing: jb koi chez hm grab kr chuke hnge to hm usko move krte we grabbing ki class ko use kreinge apne pass.
 - e.propagation -- Prevent the click event from bubbling up.
 - Aik sbse important chez yh hai ke hm primitive tag ke andar geometry call krleinge 3D element ki aur phr uske ilawa hm material bhi call krleinge aur uske ilawa hm position bhi call krleinge -- geometry se murad jese boxGeometry to builtin hmare pass ajaega box uske bad material jo hmne use kra hai usmein hmare pass color aega ke kia color hm use krrhe hain aur phr uske bd position hai ke kia position hai x,y,z axis pe aur coordinates kia hain.
+- CurrentStage hai rotation ko ghomne ke liye aur isko hm ghumaeinge all the way to stage change hojaegi baar baar.
+- leading-snug se line height change hojati hai hmare pass tailwind css mein.
+- box shadow ki alag alag bht sari properties dedi hain hmne to isse hoega yh ke 3D image lgegi yh.
+- position aur rotation ke attribute agar mein implement krounga mesh pe to yh apply krdeinge according to the requirement.
+- import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY -- aise call krleinge hm apne pass env variables.
+- environment variables mein hm jb bhi kaam kreinge to hmein string ki zrorat nhi pregi ke kese bnate hain, bs environment variable ka naam aur bs hm use krleinge key without any comma or string.

@@ -4,7 +4,7 @@ import { Home, About, Projects, Contact, Services } from "./pages";
 
 const App = () => {
   return (
-    <main className="bg-slate-300/20">
+    <main className="bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800">
       <Router>
         <Navbar />
         <Routes>

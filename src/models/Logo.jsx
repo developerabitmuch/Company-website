@@ -8,7 +8,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { a } from "@react-spring/three";
 
 // importing gsap
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
 // importing logo
 import newLogo from "../assets/3d/new.glb";
@@ -16,124 +16,74 @@ import newLogo from "../assets/3d/new.glb";
 const Logo = (props) => {
   const { nodes, materials } = useGLTF(newLogo);
 
-  // creating the reference to animate using gsap
-  const groupRef = useRef(null);
+  // creating the reference of the Logo
+  const logoRef = useRef(null);
 
-  // Define the GSAP animation
-  useEffect(() => {
-    // gsap.from method
-    // gsap.from(groupRef.current.position, {
-    //   duration: 2,
-    //   y: -10, // Move the logo downwards by 10 units
-    //   ease: "power3.out", // Use an easing function
-    //   delay: 1, // Delay the animation by 1 second
-    // });
-
-    // gsap.fromto method
-    gsap.fromTo(
-      groupRef.current.position, // Target object
-      { x: 0 }, // Starting state
-      {
-        x: 10,
-        duration: 2,
-        ease: "power3.out",
-        delay: 1,
-        repeat: -1, // Repeat infinitely
-        repeatDelay: 1, // Delay before each repeat
-      } // Ending state
-    );
-  }, []); // Run only once when component mounts
+  // To Rotate the cube we will use useFrame
+  useFrame((state, delta) => {
+    // to rotate the logo using the ref
+    // logoRef.current.rotation.x +=delta* 0.015;
+    logoRef.current.rotation.y += delta * 0.15;
+    // logoRef.current.rotation.z +=delta* 0.015;
+  });
 
   return (
-    <a.group {...props} scale={[25, 25, 25]} ref={groupRef}>
+    <a.group {...props} scale={[12, 12, 12]} ref={logoRef}>
       <a.group position={[-0.003, -0.035, -0.085]}>
+        <mesh geometry={nodes["logo-Mat"].geometry} material={materials.Mat} />
         <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["logo-Mat"].geometry}
-          material={materials.Mat}
-        />
-        <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat002"].geometry}
           material={materials["Mat.002"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat003"].geometry}
           material={materials["Mat.003"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat004"].geometry}
           material={materials["Mat.004"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat005"].geometry}
           material={materials["Mat.005"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat006"].geometry}
           material={materials["Mat.006"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat007"].geometry}
           material={materials["Mat.007"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat008"].geometry}
           material={materials["Mat.008"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat009"].geometry}
           material={materials["Mat.009"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat010"].geometry}
           material={materials["Mat.010"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat011"].geometry}
           material={materials["Mat.011"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat012"].geometry}
           material={materials["Mat.012"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat013"].geometry}
           material={materials["Mat.013"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat014"].geometry}
           material={materials["Material.002"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes["logo-Mat1"].geometry}
           material={materials["Mat.1"]}
         />
