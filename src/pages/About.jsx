@@ -7,16 +7,19 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import CTA from "../components/CTA";
+import transition from "../transition";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
     <section className="max-container">
-      <h1 className="head-text">
+      {/* Heading hai yh  */}
+      <motion.h1 className="head-text">
         Hello, This is{" "}
         <span className="blue-gradient_text font-semibold drop-shadow">
           A Bit Much Co.
         </span>
-      </h1>
+      </motion.h1>
 
       {/* Explanation of the company */}
       <div className="mt-5 flex flex-col gap-3 text-slate-800">
@@ -123,4 +126,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default transition(About);

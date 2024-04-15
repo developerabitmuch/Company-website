@@ -2,18 +2,23 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { Home, About, Projects, Contact, Services } from "./pages";
 
+// page transition ki animation run krne ke liye hm isko use krrhe hain framer-motion ko
+import { AnimatePresence } from "framer-motion";
+
 const App = () => {
   return (
     <main className="bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800">
       <Router>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <AnimatePresence mode="wait">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </AnimatePresence>
       </Router>
     </main>
   );

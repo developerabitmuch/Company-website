@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import useAlert from "../hooks/useAlert";
 import { a } from "@react-spring/three";
 import Alert from "../components/Alert";
+import transition from "../transition";
 
 const Contact = () => {
   // form ka ref bna rhe hain
@@ -199,4 +200,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default transition(Contact);

@@ -299,6 +299,17 @@ useEffect(() => {
 - aik naya component bnarhe hain hm CTA ke liye aur usko end mein about mein render kra rhe hain.
 - button bna rhe hain hm aur hmein button redirect krrha hai dosre page ke uper all the way.
 
+## Framer Motion:
+
+- Motion ki library hai yh framer motion joke hm use kreinge to apply different animations and motion to the static components take wo ache lagein.
+- npm install framer-motion -- motion graphics library.
+- page transition ke effect ke liye hm framer motion ko use krrhe hain.
+- transition.js ki aik nai file bnarhe hain jiske andar hm transition chala rhe hain.
+- components ko export kreinge hm transition component ke through aur phr hm jin jin pages mein use krna hai hmne wahan pe hm export krte we transition ko component ko as a props send krdeinge.
+- Hm transition component mein pore component ko as a props lerhe hain apne pass.
+- akhir mein hm slide-in aur slide out ki jo transition bnai hai uski css likhleinge all the way aur phr hm uske ilawa kreinge yh ke app.js ko wrap krleinge take yh transition chale hmare pass all the way.
+- transition page mein execute krdi hai meine all the way abhi tak aur wo chalrhi hai hmare pass yhn pe aur transition page ki show krrhi hai
+
 # Extra Learning:
 
 - Tailwind ki utility classes ko hmne use kra hai ismein all the way aur sbse phle hmne environment set krlia hai apne pass Tailwind.config.js ko update krke.

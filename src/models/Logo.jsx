@@ -22,9 +22,9 @@ const Logo = (props) => {
   // To Rotate the cube we will use useFrame
   useFrame((state, delta) => {
     // to rotate the logo using the ref
-    // logoRef.current.rotation.x +=delta* 0.015;
+    logoRef.current.rotation.x += delta * 0.015;
     logoRef.current.rotation.y += delta * 0.15;
-    // logoRef.current.rotation.z +=delta* 0.015;
+    logoRef.current.rotation.z += delta * 0.015;
   });
 
   return (

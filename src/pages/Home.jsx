@@ -17,6 +17,7 @@ import backgroundImage from "../assets/bg_image/bg.jpg";
 
 // TO actually move the cube with the mouse
 import { OrbitControls } from "@react-three/drei";
+import transition from "../transition";
 
 const Home = () => {
   // Rotation apply krne ke liye hmein posotion change krni hogi object ki
@@ -90,7 +91,10 @@ const Home = () => {
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
-          <OrbitControls enableZoom={false} enablePan={false} />
+          <OrbitControls
+          // enableZoom={false}
+          // enablePan={false}
+          />
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={1} />
           <hemisphereLight
@@ -143,4 +147,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default transition(Home);
