@@ -34,8 +34,9 @@ body:has(.card[data-color="green"]:hover) {
     @apply font-semibold sm:text-3xl text-xl relative font-poppins;
   }
 
+  /* this is how we create custom css classes in tailwind */
   .blue-gradient_text {
-    @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#c17b6f] to-[#0d2977] bg-clip-text text-transparent;
   }
 
   .input {

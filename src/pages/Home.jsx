@@ -122,8 +122,8 @@ const Home = () => {
           {/*  plane scale & plane position as well as state isRotating derhe hain aur rotation fixed parameters derhe hain inko destructure krleinge hm component mein aur hm mesh mein inko use krleinge  */}
           {/* <Planee
             isRotating={isRotating}
-            planeScale={planeScale}
-            planePosition={planePosition}
+            scale={planeScale}
+            position={planePosition}
             rotation={[0, 20, 0]}
           /> */}
         </Suspense>

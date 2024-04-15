@@ -267,6 +267,38 @@ useEffect(() => {
 - <OrbitControls enableZoom={false} enablePan={false} /> -- enable zoom ko hm false krdeinge hm to hm jo zoom krrhe the wo nhi hoga aur phr agar enable pen ko bhi hm false krdeinge to phr yh move nhi krega.
 - Framer motion ko bhi use krskte hain hm apne pass lekin drei ke packages ko use krke bht asan hai kaam krna
 
+## About Page:
+
+- This About page will have the description about the company what we actually do.
+- drop-shadow -- isse shadow type effect ajaega aik hmare pass.
+- constant folder bnarhe hain src mein aur phr usmein hm index.js file mein sara data daleinge apna jisko hm render kreinge apne pass -- is file mein hmare pass data hai different chezon ka joke hmein chahiye hai jese social links, experience, projects aur baki sara data jo hm map kreinge.
+- button front aur botton back ki classes ko use kra hai hmne take animation lage buttons jo bnarhe hain hm shadow aur hover ki madad se.
+- Experience show kreinge hm About page ke andar ke hmna kia kia kaam kra wa hai aur hm experience show kreinge with the help of react-vertical-timeline-component.
+
+### react-vertical-timeline-component - npm install react-vertical-timeline-component:
+
+- Yh aik npm package hai timeline show krne ke liye jo hm use krrhe hain.
+- Work history show krne ke liye hm timeline ke package ko use krrhe hain.
+- vertical-timeline-component ko hm use krke work experience show krskte hain, uske ilawa hm apna kaam bhi krskte hain aur uske ilawa hm vertical timeline component ko use kr rhe hain take work experience apna show krein.
+- import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+  import 'react-vertical-timeline-component/style.min.css';
+
+  Import krrhe hain VerticalTimeline ka main div as well as the VerticalTimelineElement take hm use krlein timeline ko.
+
+- We will wrap everything in the Vertical Timeline.
+- VerticalTimelineElements ke hm apne pass yhn pe props bhi pass kreinge aur phr hm unmein values deinge according to our need and requirement jese ke:
+- date for date
+- icon for the image
+- contentStyle to actually style the content of the timelineElement.
+- hmne sb properties ko use krke apne pass yhn pe create krdia hai timeline along with our requirement using the package.
+
+### CTA:
+
+- Hm call to action bhi provide kreinge end mein take hmare pass ajae client aur hm usse connect krlein all the way jo hmne kaam krna hai.
+- hr se hm horizontal line bnarhe hain jiske through hm seperatar bna rhe hain all the way.
+- aik naya component bnarhe hain hm CTA ke liye aur usko end mein about mein render kra rhe hain.
+- button bna rhe hain hm aur hmein button redirect krrha hai dosre page ke uper all the way.
+
 # Extra Learning:
 
 - Tailwind ki utility classes ko hmne use kra hai ismein all the way aur sbse phle hmne environment set krlia hai apne pass Tailwind.config.js ko update krke.
@@ -292,3 +324,13 @@ useEffect(() => {
 - position aur rotation ke attribute agar mein implement krounga mesh pe to yh apply krdeinge according to the requirement.
 - import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY -- aise call krleinge hm apne pass env variables.
 - environment variables mein hm jb bhi kaam kreinge to hmein string ki zrorat nhi pregi ke kese bnate hain, bs environment variable ka naam aur bs hm use krleinge key without any comma or string.
+- /_ this is how we create custom css classes in tailwind _/
+  .blue-gradient_text {
+  @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
+  }
+- Styling add krne ke liye hm style={{ margin: 0 }} ke tag ko use kreinge.
+- h-[100vh] -- iske through hm height derhe hain screen ko
+- viewport height and width is actually the viewing point of the enduser to the screen that how they actually look the screen.
+- plane mein aur island mein jo props send kreinge hm wo props wo hnge jo ke mesh leta hai take hm phr ...props dedein as an argument.
+- keyboard ki arrow keys ko press krke hm use kreinge take rotate krlein lekin uske liye hmne speed ke sath khelna hoga aur jb hm speed ke sath kheleinge to phr sahi kaam krega aur natural rotation lgegi.
+- viewport meta ke tag mein bhi hm use krte hain aur yh viewing point btata hai hmein all the way.
