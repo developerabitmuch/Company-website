@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import Loader from "../components/Loader";
@@ -12,12 +12,16 @@ import Logo from "../models/Logo";
 import HomeInfo from "../components/HomeInfo";
 import Skunk from "../models/Skunk";
 
+// Importing Sound
+import sakura from "../assets/sakura.mp3";
+
 // Import the image
 import backgroundImage from "../assets/bg_image/bg.jpg";
 
 // TO actually move the cube with the mouse
 import { OrbitControls } from "@react-three/drei";
 import transition from "../transition";
+import { soundoff, soundon } from "../assets/icons";
 
 const Home = () => {
   // Rotation apply krne ke liye hmein posotion change krni hogi object ki
@@ -26,6 +30,29 @@ const Home = () => {
 
   // current stage ki aik state bnaeinge aur pass kreinge Island mein isko
   const [currentStage, setCurrentStage] = useState(1);
+
+  // Creating Audio Ref to implement the audio
+  const audioRef = useRef(new Audio(sakura));
+  // Setting Volume of the Audio
+  audioRef.current.volume = 0.5;
+  // creating loop take chalti rhe audio hmari
+  audioRef.current.loop = true;
+
+  // Creating State for the music
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+
+  // this useEffect will run when the audio state changes and we are performing the operations inside it
+  useEffect(() => {
+    // Agr isPlayingMusic ki state true hai to phr hm kaheinge ke music run hojae
+    if (isPlayingMusic) {
+      audioRef.current.play();
+    }
+
+    // agr isPlayingMusic true nhi hai to pause krdeinge hm bs music ko
+    return () => {
+      audioRef.current.pause();
+    };
+  }, [isPlayingMusic]);
 
   // 3D model ko adjust krdeinge hm according to the screen size
   // abhi model show horha hai lekin adjust nhi hoa wa hai hmare pass yh model so we will going to
@@ -91,10 +118,7 @@ const Home = () => {
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
-          <OrbitControls
-          // enableZoom={false}
-          // enablePan={false}
-          />
+          <OrbitControls enableZoom={false} enablePan={false} />
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={1} />
           <hemisphereLight
@@ -132,17 +156,16 @@ const Home = () => {
           /> */}
         </Suspense>
       </Canvas>
-      {/* <div className="bg-red-500 absolute w-full bottom-0">
-        <video
-          width="320"
-          height="340"
-          controls
-          className="max-h-[300px] w-full"
-        >
-          <source src={""} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div> */}
+
+      {/* Sound ko manage krrhe hain hm toggle pe*/}
+      <div className="absolute bottom-2 left-2">
+        <img
+          src={!isPlayingMusic ? soundon : soundoff}
+          alt="sound"
+          className="w-10 h-10 cursor-pointer object-contain"
+          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+        />
+      </div>
     </section>
   );
 };

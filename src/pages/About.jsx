@@ -14,7 +14,13 @@ const About = () => {
   return (
     <section className="max-container">
       {/* Heading hai yh  */}
-      <motion.h1 className="head-text">
+      <motion.h1
+        initial={{ opacity: 0, x: -500 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2 }}
+        viewport={{ once: true }}
+        className="head-text"
+      >
         Hello, This is{" "}
         <span className="blue-gradient_text font-semibold drop-shadow">
           A Bit Much Co.
@@ -35,7 +41,13 @@ const About = () => {
 
         {/* Skills ke icons hm yhn pe rkheinge */}
         {/* Constant ke folder se hm map krwaeinge data apna skills ko import krke*/}
-        <div className="mt-16 flex flex-wrap gap-12">
+        <motion.div
+          initial={{ opacity: 0, x: 500 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2 }}
+          viewport={{ once: true }}
+          className="mt-16 flex flex-wrap gap-12"
+        >
           {skills.map((skill) => (
             <div className="block-container w-20 h-20" key={skill.name}>
               {/* a self closing div for the btn-back take animation ki trhn lage */}
@@ -49,7 +61,7 @@ const About = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Experience of A Bit Much*/}
@@ -87,6 +99,7 @@ const About = () => {
                   borderBottomColor: experience.iconBg,
                   boxShadow: "none",
                 }}
+                className="hover-effect" // Applying custom hover class
               >
                 <div>
                   <h3 className="text-black text-xl font-poppins font-semibold">

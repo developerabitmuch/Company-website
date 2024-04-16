@@ -295,7 +295,7 @@ useEffect(() => {
 ### CTA:
 
 - Hm call to action bhi provide kreinge end mein take hmare pass ajae client aur hm usse connect krlein all the way jo hmne kaam krna hai.
-- hr se hm horizontal line bnarhe hain jiske through hm seperatar bna rhe hain all the way.
+- <hr/> se hm horizontal line bnarhe hain jiske through hm seperatar bna rhe hain all the way.
 - aik naya component bnarhe hain hm CTA ke liye aur usko end mein about mein render kra rhe hain.
 - button bna rhe hain hm aur hmein button redirect krrha hai dosre page ke uper all the way.
 
@@ -309,6 +309,34 @@ useEffect(() => {
 - Hm transition component mein pore component ko as a props lerhe hain apne pass.
 - akhir mein hm slide-in aur slide out ki jo transition bnai hai uski css likhleinge all the way aur phr hm uske ilawa kreinge yh ke app.js ko wrap krleinge take yh transition chale hmare pass all the way.
 - transition page mein execute krdi hai meine all the way abhi tak aur wo chalrhi hai hmare pass yhn pe aur transition page ki show krrhi hai
+
+## Projects Page:
+
+- Ismein hm apne projects showcase krrhe hain.
+- we are just showcasing our projects here and giving a Call to action at a bottom.
+
+## Adding Sound to the Project:
+
+- home mein import kreinge hm sakura music ko hm apne pass.
+- import sakura from "../assets/sakura.mp3";
+- 1-hmne sbse phle audio ko import krlia hai
+- 2-phr hmne aik useRef se reference create kra hai audio ka aur hmne audio insert krdi hai new keyword se -- const audioRef = useRef(new Audio(sakura));
+- 3-phr hmne audio ka volume set kra hai -- audioRef.current.volume = 0.5;
+- 4-phr hmne audio ko loop krlia hai -- audioRef.current.loop = true;
+- 5-phr hmne aik state bnai hai music ki ke play krrha hai music -- const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+- 6-phr hm useEffect ke andar apni logic bnarhe hain aur khrhe hain ke music ko play krdo():  
+   useEffect(() => {
+  // Agr isPlayingMusic ki state true hai to phr hm kaheinge ke music run hojae
+  if (isPlayingMusic) {
+  audioRef.current.play();
+  }
+  }, [isPlayingMusic]);
+- agr isPlayingMusic ki state true nhi hai to bs hm return krdeinge -- audioRef.current.pause();
+
+- Sound ka button derhe hain hm yhn pe home mein aur phr uspe hm apni state ko manage kreinge.
+- Sound ki picture show krrhe hain hm agr band hai sound aur agr on hai to band ki picture icon show krrhe hain sound ki.
+- Sound ko manage krrhe hain hm is trhn se aur phr hm kreinge yh ke sound ko manage krrhe hain state ki madad se.
+- Sound ke music ko hm chala rhe hain aur logic bnarhe hain hm yhn pe.
 
 # Extra Learning:
 

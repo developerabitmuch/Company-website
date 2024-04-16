@@ -7,7 +7,7 @@ import { AnimatePresence } from "framer-motion";
 
 const App = () => {
   return (
-    <main className="bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800">
+    <main className="bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800 h-full">
       <Router>
         <Navbar />
         <AnimatePresence mode="wait">

@@ -203,3 +203,10 @@ body:has(.card[data-color="green"]:hover) {
   background: linear-gradient(to right, #cc45d6, #0682e1);
   transform-origin: top;
 }
+
+/* Hover Effect */
+.hover-effect:hover {
+  cursor: pointer;
+  transform: scale(1.1); /* Slightly enlarge the element */
+  transition: transform 0.3s ease; /* Smooth transition for background and scale */
+}
