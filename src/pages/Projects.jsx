@@ -1,72 +1,51 @@
-import { Link } from "react-router-dom";
 import { projects } from "../constants";
 import transition from "../transition";
-import { arrow } from "../assets/icons";
 import CTA from "../components/CTA";
+import SliderCarousel from "../components/SliderCarousel";
+import { motion } from "framer-motion";
+// import { arrow } from "../assets/icons";
 
 const Projects = () => {
+  console.log("Projects: ", projects);
+
   return (
-    <section className="max-container">
+    <section className="max-container ">
       {/* Heading */}
-      <h1 className="head-text">
+      <motion.h1
+        initial={{ opacity: 0, x: -500 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2 }}
+        viewport={{ once: true }}
+        className="head-text"
+      >
         Our{" "}
         <span className="blue-gradient_text font-semibold drop-shadow">
           Projects
         </span>
-      </h1>
+      </motion.h1>
 
       {/* Brief Explanation regarding the projects */}
       <div className="mt-5 flex flex-col gap-3 text-slate-800">
-        <p>
+        <motion.p
+          initial={{ opacity: 0, x: 500 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2 }}
+          viewport={{ once: true }}
+        >
           We've embarked with numerous clients throughout the years, but these
           are the one closest to our heart. Many of them are open-source, so if
           you come across something that piques your interest, feel free to
           explore the codebase and contribute your ideas for further
           enhancements. Your Collaboration is highly valued!
-        </p>
+        </motion.p>
       </div>
+      <hr className="border-slate-200 mt-10" />
 
-      {/* Projects to showcase */}
-      <div className="flex flex-wrap my-20 gap-16">
-        {projects.map((project) => (
-          <div className="lg:w-[400px] w-full" key={project.name}>
-            <div className="block-container w-12 h-12">
-              <div className={`btn-back rounded-xl ${project.theme}`} />
-              <div className="btn-front rounded-xl flex justify-center items-center">
-                <img
-                  src={project.iconUrl}
-                  alt="Project Icon"
-                  className="w-1/2 h-1/2 object-contain"
-                />
-              </div>
-            </div>
-
-            {/* More information Regarding the project */}
-            <div className="mt-5 flex flex-col">
-              <h4 className="text-2xl font-poppins font-semibold">
-                {project.name}
-              </h4>
-              <p className="mt-2 text-slate-700">{project.description}</p>
-              <div className="mt-5 flex items-center gap-2 font-poppins">
-                <Link
-                  to={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-blue-600"
-                >
-                  Live Link
-                </Link>
-                <img
-                  src={arrow}
-                  alt="arrow"
-                  className="w-4 h-4 object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        ))}
+      {/* Carousel using Swiperjs */}
+      <div className="w-full min-h-[1000px]  flex my-auto pb-14 justify-center px-10 ">
+        <SliderCarousel projects={projects} />
       </div>
-      <hr className="border-slate-200" />
+      <hr className="border-slate-200 mt-10" />
 
       <CTA />
     </section>

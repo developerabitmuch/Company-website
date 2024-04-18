@@ -4,6 +4,7 @@ import { Home, About, Projects, Contact, Services } from "./pages";
 
 // page transition ki animation run krne ke liye hm isko use krrhe hain framer-motion ko
 import { AnimatePresence } from "framer-motion";
+import Portfolio from "./pages/Portfolio";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/projects" element={<Projects />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/portfolio" element={<Portfolio />} />
           </Routes>
         </AnimatePresence>
       </Router>

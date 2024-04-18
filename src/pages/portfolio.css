@@ -1,0 +1,19 @@
+Swiper Classes .swiper {
+  width: 100%;
+  padding: 100px;
+  background-color: blue;
+  margin: 0;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+  height: 700px;
+}
+
+.swiper-slide img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}

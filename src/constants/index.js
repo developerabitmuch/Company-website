@@ -26,87 +26,59 @@ import {
   typescript,
 } from "../assets/icons";
 
+// Importing Skills Logo
+import adobe from "../assets/icons_abitmuch/adobe.png";
+import blender from "../assets/icons_abitmuch/blender.png";
+import cinema4D from "../assets/icons_abitmuch/cinema4D.png";
+import maya from "../assets/icons_abitmuch/maya.png";
+import substance_painter from "../assets/icons_abitmuch/substance_painter.png";
+import unity from "../assets/icons_abitmuch/unity.png";
+
+// Importing Portfolio Images
+import rabbit from "../portfolio_assets/creativeArt/rabbit.jpg";
+import Black_Beard from "../portfolio_assets/creativeArt/Black_Beard.jpg";
+import Emma from "../portfolio_assets/creativeArt/Emma.jpg";
+import ThornField from "../portfolio_assets/creativeArt/ThornField.jpg";
+import jaison from "../portfolio_assets/creativeArt/jaison.jpg";
+import Lily from "../portfolio_assets/creativeArt/Lily.jpg";
+import Oliver from "../portfolio_assets/creativeArt/Oliver.jpg";
+
 // Skills ka data hai ismein hmare pass
 export const skills = [
   {
-    imageUrl: css,
-    name: "CSS",
-    type: "Frontend",
+    imageUrl: cinema4D,
+    name: "Cinema4d",
+    type: "3D modelling",
   },
   {
-    imageUrl: express,
-    name: "Express",
-    type: "Backend",
+    imageUrl: "https://cdn.worldvectorlogo.com/logos/unreal-1.svg",
+    name: "Unreal Engine",
+    type: "Lighting",
   },
   {
-    imageUrl: git,
-    name: "Git",
-    type: "Version Control",
+    imageUrl: maya,
+    name: "Maya",
+    type: "Modeling",
   },
   {
-    imageUrl: github,
-    name: "GitHub",
-    type: "Version Control",
+    imageUrl: unity,
+    name: "Unity",
+    type: "Lighting",
   },
   {
-    imageUrl: html,
-    name: "HTML",
-    type: "Frontend",
+    imageUrl: adobe,
+    name: "Adobe PhotoShop",
+    type: "Editing",
   },
   {
-    imageUrl: javascript,
-    name: "JavaScript",
-    type: "Frontend",
+    imageUrl: substance_painter,
+    name: "Substance Painter",
+    type: "Textureing",
   },
   {
-    imageUrl: mongodb,
-    name: "MongoDB",
-    type: "Database",
-  },
-  {
-    imageUrl: motion,
-    name: "Motion",
-    type: "Animation",
-  },
-  {
-    imageUrl: mui,
-    name: "Material-UI",
-    type: "Frontend",
-  },
-  {
-    imageUrl: nextjs,
-    name: "Next.js",
-    type: "Frontend",
-  },
-  {
-    imageUrl: nodejs,
-    name: "Node.js",
-    type: "Backend",
-  },
-  {
-    imageUrl: react,
-    name: "React",
-    type: "Frontend",
-  },
-  {
-    imageUrl: redux,
-    name: "Redux",
-    type: "State Management",
-  },
-  {
-    imageUrl: sass,
-    name: "Sass",
-    type: "Frontend",
-  },
-  {
-    imageUrl: tailwindcss,
-    name: "Tailwind CSS",
-    type: "Frontend",
-  },
-  {
-    imageUrl: typescript,
-    name: "TypeScript",
-    type: "Frontend",
+    imageUrl: blender,
+    name: "Blender",
+    type: "Modeling",
   },
 ];
 
@@ -185,15 +157,27 @@ export const socialLinks = [
   },
 ];
 
+// folioport
+export const folioport = [
+  Emma,
+  jaison,
+  Lily,
+  Black_Beard,
+  Oliver,
+  rabbit,
+  ThornField,
+];
+
 // Projects jo kre hain hmne uska data hai ismein hmare pass
 export const projects = [
   {
-    iconUrl: pricewise,
-    theme: "btn-back-red",
-    name: "Amazon Price Tracker",
+    iconUrl: rabbit,
+    theme: "btn-back-white",
+    name: "Concept Art | Illustrations | Visuals",
     description:
-      "Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.",
+      " Concept art is a tool that allows the director to guide the visual styling of the project, with a cycle of rejections and approvals.",
     link: "https://github.com/adrianhajdin/pricewise",
+    portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
   },
   {
     iconUrl: threads,
@@ -202,6 +186,7 @@ export const projects = [
     description:
       'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
     link: "https://github.com/adrianhajdin/threads",
+    portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
   },
   {
     iconUrl: car,
@@ -210,6 +195,7 @@ export const projects = [
     description:
       "Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.",
     link: "https://github.com/adrianhajdin/project_next13_car_showcase",
+    portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
   },
   {
     iconUrl: snapgram,
@@ -218,6 +204,7 @@ export const projects = [
     description:
       "Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.",
     link: "https://github.com/adrianhajdin/social_media_app",
+    portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
   },
   {
     iconUrl: estate,
@@ -226,6 +213,7 @@ export const projects = [
     description:
       "Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.",
     link: "https://github.com/adrianhajdin/projects_realestate",
+    portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
   },
   {
     iconUrl: summiz,
@@ -234,5 +222,6 @@ export const projects = [
     description:
       "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
     link: "https://github.com/adrianhajdin/project_ai_summarizer",
+    portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
   },
 ];

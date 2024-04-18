@@ -35,9 +35,23 @@ const About = () => {
         </p>
       </div>
 
+      <hr className="border-slate-200 mt-10" />
+
       {/* Skills we provide as a service */}
       <div className="py-10 flex flex-col">
-        <h3 className="subhead-text">Our Expertise We Provide!</h3>
+        <h3 className="subhead-text">
+          Our{" "}
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 4 }}
+            viewport={{ once: true }}
+            className="blue-gradient_text font-semibold drop-shadow"
+          >
+            Expertise{" "}
+          </motion.span>{" "}
+          We Provide!
+        </h3>
 
         {/* Skills ke icons hm yhn pe rkheinge */}
         {/* Constant ke folder se hm map krwaeinge data apna skills ko import krke*/}
@@ -63,6 +77,7 @@ const About = () => {
           ))}
         </motion.div>
       </div>
+      <hr className="border-slate-200 mt-10" />
 
       {/* Experience of A Bit Much*/}
       <div className="py-16">

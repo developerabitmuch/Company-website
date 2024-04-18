@@ -3,14 +3,19 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/logo/logo_navbar.jpg";
 
 const Navbar = () => {
-  // const [isActive]=useState(true)
+  const [isActive, setIsActive] = useState(false);
   return (
     <header className="header ">
       <NavLink
         to="/"
-        className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md "
+        className="w-14 h-14 rounded-lg bg-white items-center justify-center flex font-bold shadow-md "
+        onClick={() => setIsActive(true)}
       >
-        <img src={logo} alt="Logo" className="h-auto w-full rounded-md" />
+        <img
+          src={logo}
+          alt="Logo"
+          className="h-full w-full rounded-md object-cover"
+        />
         {/* Use the imported logo image */}
       </NavLink>
       <nav className="flex text-lg gap-7 font-medium ">
@@ -19,6 +24,7 @@ const Navbar = () => {
           className={({ isActive }) => {
             isActive ? "text-blue-500" : "text-black";
           }}
+          onClick={() => setIsActive(true)}
         >
           About
         </NavLink>
@@ -27,6 +33,7 @@ const Navbar = () => {
           className={({ isActive }) => {
             isActive ? "text-blue-500" : "text-black";
           }}
+          onClick={() => setIsActive(true)}
         >
           Projects
         </NavLink>
@@ -43,6 +50,7 @@ const Navbar = () => {
           className={({ isActive }) => {
             isActive ? "text-blue-500" : "text-black";
           }}
+          onClick={() => setIsActive(true)}
         >
           Contact
         </NavLink>

@@ -295,7 +295,7 @@ useEffect(() => {
 ### CTA:
 
 - Hm call to action bhi provide kreinge end mein take hmare pass ajae client aur hm usse connect krlein all the way jo hmne kaam krna hai.
-- <hr/> se hm horizontal line bnarhe hain jiske through hm seperatar bna rhe hain all the way.
+- "hr" -- se hm horizontal line bnarhe hain jiske through hm seperatar bna rhe hain all the way.
 - aik naya component bnarhe hain hm CTA ke liye aur usko end mein about mein render kra rhe hain.
 - button bna rhe hain hm aur hmein button redirect krrha hai dosre page ke uper all the way.
 
@@ -338,6 +338,32 @@ useEffect(() => {
 - Sound ko manage krrhe hain hm is trhn se aur phr hm kreinge yh ke sound ko manage krrhe hain state ki madad se.
 - Sound ke music ko hm chala rhe hain aur logic bnarhe hain hm yhn pe.
 
+## Swiper.js -- To apply horizontal slider to the website: -- npm i swiper
+
+- Hm is library ki madad se horizontal carousel bna rhe hain.
+- Kuch nhi kra hai hmne bs yh swiper/react se 2 packages import kre hain aur bs hm unko use krrhe hain.
+- import { Swiper, SwiperSlide } from "swiper/react";
+- Swiper se hm wrap krrhe hain apni pori component ko jahan pe hmne slider lgana hai aur phr hm usko use krrhe hain - uske andar hm SwiperSlide ke component ko use krrhe hain aur phr hm uske andar apna data show krrhe hain.
+- Isko achi trhn se utilize krne ka aik behtreen tarika jo hai wo hai hmare pass ke hm array mein map krlein aur phr hm us hisab se array ko map krrhe hain aur uske andar swiperSlide ko use krrhe hain.
+- Hm swiper ke modules ko bhi use krleinge aur import krleinge apne pass yhn pe aur phr hm unko utilize krleinge according to our requirement.
+- import "swiper/swiper-bundle.css"; -- isko krne se hmare pass jo jo sare styles hain wo ajate hain sare ke sare aur phr isse hmare pass arrow, pagination aur baki chezein showcase hojaeingi all the way.
+- scrollbar={{ draggable: true }} -- Isse hm scrollbar lgadeinge apne pass all the way.
+- cubeEffects bhi hm lga skte hain modules mein yhn pe apne pass all the way.
+- cubeEffects bhi hm import kreinge modules mein apne pass yhn pe.
+
+## Portfolio Designing Page along the Slidebar:
+
+- Image carousel pe hmne link bnadia hai aur ab hm portfolio ke page mein route horhe hain.
+- ID get krleinge hm khn se ghus rhe hain is page ke andar from the useParams aur phr hm params ko use krte we apne pass kreinge yh template literal mein apne pass get krleinge array mein jake images ko portflio ki aur showcase krwadeinge apne pass.
+- Data handling mein issues arhe the hmein to hmne krna yh hai ke proper dynamic route create krna hai aur phr hmne us route ke hisab se aur uske ilawa ismein hmare pass hm state mein data send krrhe hain aur props mein get krrhe hain wo sara data apne pass to iska sbse bara faida yh horha hai hmein ke hmari data handling aramse horhi hai.
+  <NavLink
+  to={{
+                pathname: "/portfolio", // route krrhe hain hm yh
+                state: { portfolio: project.portfolio }, //This is how we are actually sending the data
+              }}
+
+- In the portfolio component we will actually going to get all the data inside the props all the way and therefore we will be using the data of the images to showcase the portfolio images all the way.
+
 # Extra Learning:
 
 - Tailwind ki utility classes ko hmne use kra hai ismein all the way aur sbse phle hmne environment set krlia hai apne pass Tailwind.config.js ko update krke.
@@ -373,3 +399,6 @@ useEffect(() => {
 - plane mein aur island mein jo props send kreinge hm wo props wo hnge jo ke mesh leta hai take hm phr ...props dedein as an argument.
 - keyboard ki arrow keys ko press krke hm use kreinge take rotate krlein lekin uske liye hmne speed ke sath khelna hoga aur jb hm speed ke sath kheleinge to phr sahi kaam krega aur natural rotation lgegi.
 - viewport meta ke tag mein bhi hm use krte hain aur yh viewing point btata hai hmein all the way.
+- Hm apne 3D scenes ke andar HTML aur Text include krskte hain with the help of the Html, Text provided by the drei library aur iske through hm insert krskte hain 3D model ke group ya mesh ke andar HTML aur text aur usko apne hisab se style krskte hain hm.
+- Drei ka component float hm use krskte hain to animate -- yh aik vip chez hai drei aur iske prebuild components.
+- React Scroll -- npm library to be used to scroll the projects.

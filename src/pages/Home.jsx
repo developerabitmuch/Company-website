@@ -9,14 +9,14 @@ import Sky from "../models/Sky";
 import Bird from "../models/Bird";
 import Planee from "../models/Planee";
 import Logo from "../models/Logo";
-import HomeInfo from "../components/HomeInfo";
-import Skunk from "../models/Skunk";
+// import HomeInfo from "../components/HomeInfo";
+// import Skunk from "../models/Skunk";
 
 // Importing Sound
 import sakura from "../assets/sakura.mp3";
 
 // Import the image
-import backgroundImage from "../assets/bg_image/bg.jpg";
+// import backgroundImage from "../assets/bg_image/bg.jpg";
 
 // TO actually move the cube with the mouse
 import { OrbitControls } from "@react-three/drei";
@@ -118,7 +118,10 @@ const Home = () => {
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
-          <OrbitControls enableZoom={false} enablePan={false} />
+          <OrbitControls
+          // enableZoom={false}
+          // enablePan={false}
+          />
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={1} />
           <hemisphereLight
