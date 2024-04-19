@@ -363,6 +363,8 @@ useEffect(() => {
               }}
 
 - In the portfolio component we will actually going to get all the data inside the props all the way and therefore we will be using the data of the images to showcase the portfolio images all the way.
+- Navlink sahi kaam nhi krrha hai uski jagah hm use kreinge useNavigate hook aur useLocation hook.
+- useNavigate ko use krte we hm navigate kr jaeinge hm dosre page ke uper uske ilawa hm data bhi send krskte hain useNavigate se aur phr hm kreinge yh ke us data ko hm get krleinge useLocation hook ko use krte we us page mein jhn hm navigate krchuke hain.
 
 # Extra Learning:
 
@@ -402,3 +404,5 @@ useEffect(() => {
 - Hm apne 3D scenes ke andar HTML aur Text include krskte hain with the help of the Html, Text provided by the drei library aur iske through hm insert krskte hain 3D model ke group ya mesh ke andar HTML aur text aur usko apne hisab se style krskte hain hm.
 - Drei ka component float hm use krskte hain to animate -- yh aik vip chez hai drei aur iske prebuild components.
 - React Scroll -- npm library to be used to scroll the projects.
+- useNavigate hook is provided by react-router-dom aur iske through hm navigate krskte hain.
+- useNavigate ke andar -- -1 as an argument deinge hm to iska mtlb yh hota hai ke hmein previous page pe lejao.

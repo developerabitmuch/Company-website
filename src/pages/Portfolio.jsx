@@ -10,19 +10,22 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import "./portfolio.css";
+import { useLocation } from "react-router-dom";
 
-const Portfolio = (props) => {
-  // yh hmare pass arha hai
-  const { location } = props;
-  const portfolio = location && location.state ? location.state.portfolio : [];
+const Portfolio = () => {
+  // useLocation hook se hmare pass data ajaega jo hm send krte hain useNavigate se
+  const location = useLocation();
 
-  console.log("Portfolio coming from projects:", portfolio);
+  const name = location.state.project.name;
+  const portfolio = location.state.project.portfolio;
+  console.log("Name Coming :", name);
+  console.log("Portfolio Coming :", portfolio);
 
   return (
     <div className=" max-w-screen-2xl mx-auto px-4 py-16 h-screen ">
       {/* Heading of the portfolio */}
-      <h1 className="py-20 text-5xl text-center font-poppins font-semibold ">
-        Creative Art
+      <h1 className="py-20 text-5xl text-center font-poppins font-semibold shadow- mb-10 gradient-text">
+        {name}
       </h1>
       <Swiper
         effect={"coverflow"}
@@ -42,14 +45,12 @@ const Portfolio = (props) => {
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="mySwiper"
       >
-        {folioport.map((picture) => (
-          <SwiperSlide key={picture} className="pb-28">
+        {portfolio.map((picture) => (
+          <SwiperSlide key={picture}>
             <img src={picture} alt={picture} />
           </SwiperSlide>
         ))}
       </Swiper>
-
-      {/* Swiper wala Slider bnarhe hain portfolio ko showcase krne ke liye*/}
     </div>
   );
 };
