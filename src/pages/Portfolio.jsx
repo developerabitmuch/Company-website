@@ -1,7 +1,6 @@
 import React from "react";
 import transition from "../transition";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { folioport } from "../constants";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 
 // Import Swiper styles
@@ -14,17 +13,19 @@ import { useLocation } from "react-router-dom";
 
 const Portfolio = () => {
   // useLocation hook se hmare pass data ajaega jo hm send krte hain useNavigate se
-  const location = useLocation();
+  const {
+    state: { name, portfolio },
+  } = useLocation();
 
-  const name = location.state.project.name;
-  const portfolio = location.state.project.portfolio;
+  // const name = location.state.project.name;
+  // const portfolio = location.state.project.portfolio;
   console.log("Name Coming :", name);
   console.log("Portfolio Coming :", portfolio);
 
   return (
     <div className=" max-w-screen-2xl mx-auto px-4 py-16 h-screen ">
       {/* Heading of the portfolio */}
-      <h1 className="py-20 text-5xl text-center font-poppins font-semibold shadow- mb-10 gradient-text">
+      <h1 className="py-20 text-5xl text-center font-poppins font-semibold shadow- mb-10 blue-gradient_text">
         {name}
       </h1>
       <Swiper

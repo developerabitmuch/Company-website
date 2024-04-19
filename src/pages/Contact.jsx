@@ -191,7 +191,7 @@ const Contact = () => {
               currentAnimation={currentAnimation}
               position={[0.5, 0.35, 0]}
               rotation={[12.6, -0.6, 0]} // apni screen ke hisab se adjust krleinge hm yh sb coordinates
-              scale={[0.5, 0.5, 0.5]}
+              scale={[0.4, 0.4, 0.4]}
             />
           </Suspense>
         </Canvas>

@@ -15,7 +15,7 @@ const SliderCarousel = ({ projects }) => {
   // Define handleClickToNavigate function outside of the component
   const handleClickToNavigate = (project) => {
     navigate("/portfolio", {
-      state: { project: project }, // pora project hi send krdia hai hmne as a state aur location mein get krrhe hain hm whn pe yh project
+      state: { name: project.name, portfolio: project.portfolio }, // pora project hi send krdia hai hmne as a state aur location mein get krrhe hain hm whn pe yh project
     });
   };
 
@@ -32,16 +32,16 @@ const SliderCarousel = ({ projects }) => {
     >
       <div className="flex flex-col items-center justify-center">
         {projects.map((project) => (
-          <SwiperSlide
-            key={project.name}
-            onClick={() => handleClickToNavigate(project)}
-          >
-            <div className="min-w-fit m-20 flex flex-col items-center justify-center min-h-[800px] bg-gradient-to-t from-blue-800 to-purple-800 rounded-md shadow-lg">
-              <div className="block-container h-[500px] w-[400px] rounded-full">
-                <div className={`btn-bac rounded-xl ${project.theme}`} />
-                <div className="btn-fro rounded-xl flex items-center justify-center">
+          <SwiperSlide key={project.name}>
+            <div
+              onClick={() => handleClickToNavigate(project)}
+              className="min-w-fit m-20 flex flex-col items-center justify-center min-h-[800px] bg-gradient-to-t from-blue-800 to-purple-800 rounded-md shadow-lg"
+            >
+              <div className="block-container h-[500px] w-[400px] flex items-center justify-center ">
+                {/* <div className={`btn-bac rounded-xl ${project.theme}`} /> */}
+                <div className="btn-fro rounded-xl flex items-center justify-center h-[500px] shadow-lg">
                   <img
-                    src={project.iconUrl}
+                    src={project.coverImg}
                     alt="Project Icon"
                     className="object-contain rounded-lg"
                   />

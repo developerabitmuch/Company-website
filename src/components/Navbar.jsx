@@ -29,13 +29,13 @@ const Navbar = () => {
           About
         </NavLink>
         <NavLink
-          to="/projects"
+          to="/services"
           className={({ isActive }) => {
             isActive ? "text-blue-500" : "text-black";
           }}
           onClick={() => setIsActive(true)}
         >
-          Projects
+          Services
         </NavLink>
         {/* <NavLink
           to="/services"

@@ -35,6 +35,8 @@ import substance_painter from "../assets/icons_abitmuch/substance_painter.png";
 import unity from "../assets/icons_abitmuch/unity.png";
 
 // Importing Portfolio Images
+
+// CreativeArt Portfolio Images
 import rabbit from "../portfolio_assets/creativeArt/rabbit.jpg";
 import Black_Beard from "../portfolio_assets/creativeArt/Black_Beard.jpg";
 import Emma from "../portfolio_assets/creativeArt/Emma.jpg";
@@ -42,6 +44,39 @@ import ThornField from "../portfolio_assets/creativeArt/ThornField.jpg";
 import jaison from "../portfolio_assets/creativeArt/jaison.jpg";
 import Lily from "../portfolio_assets/creativeArt/Lily.jpg";
 import Oliver from "../portfolio_assets/creativeArt/Oliver.jpg";
+
+// Animations Portfolio Images
+import ani1 from "../portfolio_assets/animations/ani1.png";
+import ani2 from "../portfolio_assets/animations/ani2.png";
+import ani3 from "../portfolio_assets/animations/ani3.png";
+import ani4 from "../portfolio_assets/animations/ani4.png";
+import ani5 from "../portfolio_assets/animations/ani5.png";
+import ani6 from "../portfolio_assets/animations/ani6.png";
+import ani7 from "../portfolio_assets/animations/ani7.png";
+import ani8 from "../portfolio_assets/animations/ani8.png";
+import ani9 from "../portfolio_assets/animations/ani9.png";
+import ani10 from "../portfolio_assets/animations/ani10.png";
+import ani11 from "../portfolio_assets/animations/ani11.png";
+import ani12 from "../portfolio_assets/animations/ani12.png";
+import ani13 from "../portfolio_assets/animations/ani13.png";
+import ani14 from "../portfolio_assets/animations/ani14.png";
+import ani15 from "../portfolio_assets/animations/ani15.png";
+
+// motionGraphics portfolio Images
+import mot1 from "../portfolio_assets/motion_graphics/mot1.png";
+import mot2 from "../portfolio_assets/motion_graphics/mot2.png";
+import mot3 from "../portfolio_assets/motion_graphics/mot3.png";
+import mot4 from "../portfolio_assets/motion_graphics/mot4.png";
+import mot5 from "../portfolio_assets/motion_graphics/mot5.png";
+
+// techpack designer
+import tec1 from "../portfolio_assets/techpack_designer/tec1.png";
+import tec2 from "../portfolio_assets/techpack_designer/tec2.png";
+import tec3 from "../portfolio_assets/techpack_designer/tec3.png";
+import tec4 from "../portfolio_assets/techpack_designer/tec4.png";
+import tec5 from "../portfolio_assets/techpack_designer/tec5.png";
+import tec6 from "../portfolio_assets/techpack_designer/tec6.png";
+import tec7 from "../portfolio_assets/techpack_designer/tec7.png";
 
 // Skills ka data hai ismein hmare pass
 export const skills = [
@@ -157,71 +192,59 @@ export const socialLinks = [
   },
 ];
 
-// folioport
-export const folioport = [
-  Emma,
-  jaison,
-  Lily,
-  Black_Beard,
-  Oliver,
-  rabbit,
-  ThornField,
-];
+//
 
 // Projects jo kre hain hmne uska data hai ismein hmare pass
 export const projects = [
   {
-    iconUrl: rabbit,
-    theme: "btn-back-white",
+    coverImg: rabbit,
     name: "Concept Art | Illustrations | Visuals",
     description:
       " Concept art is a tool that allows the director to guide the visual styling of the project, with a cycle of rejections and approvals.",
-    link: "https://github.com/adrianhajdin/pricewise",
     portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
   },
   {
-    iconUrl: threads,
-    theme: "btn-back-green",
-    name: "Full Stack Threads Clone",
+    coverImg: ani15,
+    name: "Character Development | 3D Animations",
     description:
-      'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-    link: "https://github.com/adrianhajdin/threads",
-    portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
+      "Character Development is the creation and refinement of compelling characters through digital modeling and animation techniques.",
+    portfolio: [
+      ani1,
+      ani2,
+      ani3,
+      ani4,
+      ani5,
+      ani6,
+      ani7,
+      ani8,
+      ani9,
+      ani10,
+      ani11,
+      ani12,
+      ani13,
+      ani14,
+      ani15,
+    ],
   },
   {
-    iconUrl: car,
-    theme: "btn-back-blue",
-    name: "Car Finding App",
+    coverImg: mot5,
+    name: "Motion Graphics | Architecture Design",
     description:
-      "Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.",
-    link: "https://github.com/adrianhajdin/project_next13_car_showcase",
-    portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
+      "Motion Graphics is the combination of graphic design with animation techniques to create visually captivating and dynamic content.",
+    portfolio: [mot1, mot2, mot3, mot4, mot5],
   },
   {
-    iconUrl: snapgram,
-    theme: "btn-back-pink",
-    name: "Full Stack Instagram Clone",
+    coverImg: tec1,
+    name: "Techpack 3D designer",
     description:
-      "Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.",
-    link: "https://github.com/adrianhajdin/social_media_app",
-    portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
+      "A techpack 3D designer integrates technological tools and software to develop detailed technical packages for product manufacturing, particularly in the fashion industry.",
+    portfolio: [tec1, tec2, tec3, tec4, tec5, tec6, tec7],
   },
   {
-    iconUrl: estate,
-    theme: "btn-back-black",
-    name: "Real-Estate Application",
+    coverImg: estate,
+    name: "Environment Artist",
     description:
-      "Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.",
-    link: "https://github.com/adrianhajdin/projects_realestate",
-    portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
-  },
-  {
-    iconUrl: summiz,
-    theme: "btn-back-yellow",
-    name: "AI Summarizer Application",
-    description:
-      "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
-    link: "https://github.com/adrianhajdin/project_ai_summarizer",
+      "An environment artist specializes in crafting immersive digital landscapes and settings for video games, films, or virtual reality experiences. ",
     portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
   },
 ];

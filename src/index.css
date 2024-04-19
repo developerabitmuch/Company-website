@@ -36,7 +36,7 @@ body:has(.card[data-color="green"]:hover) {
 
   /* this is how we create custom css classes in tailwind */
   .blue-gradient_text {
-    @apply bg-gradient-to-r from-[#c17b6f] to-[#0d2977] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#d6c367] via-[#b963ba] to-[#010614] bg-clip-text text-transparent;
   }
 
   .input {
