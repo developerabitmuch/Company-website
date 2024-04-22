@@ -9,7 +9,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import "./portfolio.css";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Portfolio = () => {
   // useLocation hook se hmare pass data ajaega jo hm send krte hain useNavigate se
@@ -23,9 +23,9 @@ const Portfolio = () => {
   console.log("Portfolio Coming :", portfolio);
 
   return (
-    <div className=" max-w-screen-2xl mx-auto px-4 py-16 h-screen ">
+    <div className=" mx-auto px-4 h-[100vh] pt-12">
       {/* Heading of the portfolio */}
-      <h1 className="py-20 text-5xl text-center font-poppins font-semibold shadow- mb-10 blue-gradient_text">
+      <h1 className="pt-24 pb-2 xl:text-5xl lg:text-4xl text-xl text-center font-poppins font-semibold  mb-10 blue-gradient_text">
         {name}
       </h1>
       <Swiper
@@ -48,7 +48,9 @@ const Portfolio = () => {
       >
         {portfolio.map((picture) => (
           <SwiperSlide key={picture}>
-            <img src={picture} alt={picture} />
+            <Link to={"/contact"}>
+              <img src={picture} alt={picture} className="hover:scale-y-100" />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

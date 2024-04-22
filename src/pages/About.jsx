@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section className="max-container">
+    <section className="max-container overflow-hidden">
       {/* Heading hai yh  */}
       <motion.h1
         initial={{ opacity: 0, x: -500 }}

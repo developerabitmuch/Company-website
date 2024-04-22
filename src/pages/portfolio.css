@@ -1,4 +1,6 @@
-Swiper Classes .swiper {
+/* Swiper Classes  */
+
+.swiper {
   width: 100%;
   padding: 100px;
   margin: 0;
@@ -7,8 +9,42 @@ Swiper Classes .swiper {
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 500px;
-  height: 700px;
+  /* width: 500px; */
+  /* height: 700px; */
+}
+
+@media only screen and (max-width: 600px) {
+  .swiper-slide {
+    width: 150px;
+    height: 250px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .swiper-slide {
+    width: 250px;
+    height: 300px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .swiper-slide {
+    width: 280px;
+    height: 350px;
+  }
+}
+
+@media only screen and (min-width: 922px) {
+  .swiper-slide {
+    width: 350px;
+    height: 450px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .swiper-slide {
+    width: 500px;
+    height: 500px;
+  }
 }
 
 .swiper-slide img {
@@ -18,7 +54,7 @@ Swiper Classes .swiper {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #a84995, #14147b);
+  background: linear-gradient(90deg, #e349c5, #000006);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

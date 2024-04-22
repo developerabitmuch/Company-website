@@ -35,23 +35,23 @@ const SliderCarousel = ({ projects }) => {
           <SwiperSlide key={project.name}>
             <div
               onClick={() => handleClickToNavigate(project)}
-              className="min-w-fit m-20 flex flex-col items-center justify-center min-h-[800px] bg-gradient-to-t from-blue-800 to-purple-800 rounded-md shadow-lg"
+              className="py-5 min-w-fit m-20 flex flex-col items-center justify-center xl:min-h-[800px] lg:min-h-[600px] bg-gradient-to-t from-blue-800 to-purple-800 rounded-md shadow-lg"
             >
-              <div className="block-container h-[500px] w-[400px] flex items-center justify-center ">
+              <div className="block-container xl:h-[450px] lg:h-[400px] md:h-[450px] sm:h-[430px] px-4 flex items-center justify-center ">
                 {/* <div className={`btn-bac rounded-xl ${project.theme}`} /> */}
-                <div className="btn-fro rounded-xl flex items-center justify-center h-[500px] shadow-lg">
+                <div className="btn-fro rounded-xl flex h-[100%] items-center justify-center shadow-md">
                   <img
                     src={project.coverImg}
                     alt="Project Icon"
-                    className="object-contain rounded-lg"
+                    className="object-contain rounded-lg p-4"
                   />
                 </div>
               </div>
-              <div className="mt-5 flex flex-col py-4 items-center justify-center">
-                <h4 className="text-2xl font-poppins font-semibold mt-8 text-white">
+              <div className="mt-2 mx-2 text-center flex flex-col  items-center justify-center">
+                <h4 className="lg:text-2xl md:text-xl font-poppins font-semibold mt-8 text-white">
                   {project.name}
                 </h4>
-                <p className="flex text-center mx-16 mt-6 text-white">
+                <p className="flex text-center md:mx-2 xl:mx-16 mt-2 text-white">
                   {project.description}
                 </p>
               </div>

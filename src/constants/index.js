@@ -240,11 +240,11 @@ export const projects = [
       "A techpack 3D designer integrates technological tools and software to develop detailed technical packages for product manufacturing, particularly in the fashion industry.",
     portfolio: [tec1, tec2, tec3, tec4, tec5, tec6, tec7],
   },
-  {
-    coverImg: estate,
-    name: "Environment Artist",
-    description:
-      "An environment artist specializes in crafting immersive digital landscapes and settings for video games, films, or virtual reality experiences. ",
-    portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
-  },
+  // {
+  //   coverImg: estate,
+  //   name: "Environment Artist",
+  //   description:
+  //     "An environment artist specializes in crafting immersive digital landscapes and settings for video games, films, or virtual reality experiences. ",
+  //   portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
+  // },
 ];
