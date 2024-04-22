@@ -21,10 +21,9 @@ const Navbar = () => {
     <header className="header ">
       <NavLink
         to="/"
-        className="md:w-14 w-10 md:h-14 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md "
+        className="md:w-14 w-10 md:h-14 h-10 rounded-lg bg-white items-center justify-between flex font-bold  shadow-md "
         onClick={() => {
           setIsActive(true);
-          log;
         }}
       >
         <img
@@ -34,7 +33,7 @@ const Navbar = () => {
         />
         {/* Use the imported logo image */}
       </NavLink>
-      <nav className="md:flex text-lg gap-7 font-medium hidden">
+      <nav className="md:flex text-lg gap-7 font-medium hidden ">
         <NavLink
           to="/about"
           className={({ isActive }) => {

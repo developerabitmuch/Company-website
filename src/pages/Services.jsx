@@ -25,7 +25,7 @@ const Services = () => {
       </motion.h1>
 
       {/* Brief Explanation regarding the projects */}
-      <div className="mt-5 flex flex-col gap-3 text-slate-800">
+      <div className="mt-5 flex flex-col gap-3 text-slate-800 text-justify">
         <motion.p
           initial={{ opacity: 0, x: 500 }}
           whileInView={{ opacity: 1, x: 0 }}
