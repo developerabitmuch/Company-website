@@ -366,6 +366,11 @@ useEffect(() => {
 - Navlink sahi kaam nhi krrha hai uski jagah hm use kreinge useNavigate hook aur useLocation hook.
 - useNavigate ko use krte we hm navigate kr jaeinge hm dosre page ke uper uske ilawa hm data bhi send krskte hain useNavigate se aur phr hm kreinge yh ke us data ko hm get krleinge useLocation hook ko use krte we us page mein jhn hm navigate krchuke hain.
 
+## Responsiveness:
+
+- I will be creating the website responsive all the way take sb screens ke hisab se smne show ho data aur website phate nhi hmari.
+-
+
 # Extra Learning:
 
 - Tailwind ki utility classes ko hmne use kra hai ismein all the way aur sbse phle hmne environment set krlia hai apne pass Tailwind.config.js ko update krke.
