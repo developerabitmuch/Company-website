@@ -4,19 +4,10 @@ import { Suspense } from "react";
 import Loader from "../components/Loader";
 
 // Importing 3D models
-import Island from "../models/Island";
-import Sky from "../models/Sky";
-import Bird from "../models/Bird";
-import Planee from "../models/Planee";
 import Logo from "../models/Logo";
-// import HomeInfo from "../components/HomeInfo";
-// import Skunk from "../models/Skunk";
 
 // Importing Sound
 import sakura from "../assets/sakura.mp3";
-
-// Import the image
-// import backgroundImage from "../assets/bg_image/bg.jpg";
 
 // TO actually move the cube with the mouse
 import { OrbitControls } from "@react-three/drei";

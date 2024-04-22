@@ -369,7 +369,11 @@ useEffect(() => {
 ## Responsiveness:
 
 - I will be creating the website responsive all the way take sb screens ke hisab se smne show ho data aur website phate nhi hmari.
--
+
+## react-icons for the navbar
+
+- mobile screen pe meine ham burger lgadia hai website mein aur website pe hmari jb hm home screen pe hnge to hmare pass hamburger show krega website pe.
+- uske ilawa hmare pass nav bar show krega
 
 # Extra Learning:
 

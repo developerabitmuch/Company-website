@@ -15,7 +15,7 @@ const About = () => {
     <section className="max-container overflow-hidden">
       {/* Heading hai yh  */}
       <motion.h1
-        initial={{ opacity: 0, x: -500 }}
+        initial={{ opacity: 0, x: 0 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 2 }}
         viewport={{ once: true }}
@@ -56,7 +56,7 @@ const About = () => {
         {/* Skills ke icons hm yhn pe rkheinge */}
         {/* Constant ke folder se hm map krwaeinge data apna skills ko import krke*/}
         <motion.div
-          initial={{ opacity: 0, x: 500 }}
+          initial={{ opacity: 0, x: 0 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 2 }}
           viewport={{ once: true }}

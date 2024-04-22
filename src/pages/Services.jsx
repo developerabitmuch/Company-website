@@ -12,7 +12,7 @@ const Services = () => {
     <section className="max-container ">
       {/* Heading */}
       <motion.h1
-        initial={{ opacity: 0, x: -500 }}
+        initial={{ opacity: -3, x: 0 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 2 }}
         viewport={{ once: true }}
