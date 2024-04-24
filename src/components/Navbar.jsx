@@ -2,13 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo/logo_navbar.jpg";
 
-import {
-  FaBars,
-  FaTimes,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -44,6 +38,15 @@ const Navbar = () => {
           About
         </NavLink>
         <NavLink
+          to="/work"
+          className={({ isActive }) => {
+            isActive ? "text-blue-500" : "text-black";
+          }}
+          onClick={() => setIsActive(true)}
+        >
+          Work
+        </NavLink>
+        <NavLink
           to="/services"
           className={({ isActive }) => {
             isActive ? "text-blue-500" : "text-black";
@@ -51,6 +54,15 @@ const Navbar = () => {
           onClick={() => setIsActive(true)}
         >
           Services
+        </NavLink>
+        <NavLink
+          to="/faqs"
+          className={({ isActive }) => {
+            isActive ? "text-blue-500" : "text-black";
+          }}
+          onClick={() => setIsActive(true)}
+        >
+          FAQs
         </NavLink>
         <NavLink
           to="/contact"

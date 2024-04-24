@@ -13,6 +13,7 @@ import sakura from "../assets/sakura.mp3";
 import { OrbitControls } from "@react-three/drei";
 import transition from "../transition";
 import { soundoff, soundon } from "../assets/icons";
+import Skunk_duck from "../models/Skunk_duck";
 
 const Home = () => {
   // Rotation apply krne ke liye hmein posotion change krni hogi object ki
@@ -109,10 +110,7 @@ const Home = () => {
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
-          <OrbitControls
-          // enableZoom={false}
-          // enablePan={false}
-          />
+          <OrbitControls enableZoom={true} enablePan={true} />
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={1} />
           <hemisphereLight
@@ -123,6 +121,11 @@ const Home = () => {
           {/* <Skunk isRotating={isRotating} /> */}
           {/* Abit Much Logo */}
           <Logo />
+          {/* <Skunk_duck
+          // position={[0.5, 0.35, 0]}
+          // rotation={[-12.6, -0.6, 0]} // apni screen ke hisab se adjust krleinge hm yh sb coordinates
+          // scale={[0.1, 0.1, 0.1]}
+          /> */}
           {/* 3D Models importing here*/}
           {/* bird that will move */}
           {/* <Bird /> */}

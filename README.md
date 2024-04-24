@@ -22,6 +22,75 @@
 - Is mein hmare pass aik popup hoga aur hmare pass ismein 3D images hngi jo ghoomeini all the way.
 - main parent div hmne relative bnadia hai joke section hai aur baki ke popup aur 3D images wale div hmare pass absolute hnge all the way.
 
+### Experience:
+
+- {/_ Experience of A Bit Much_/}
+    <div className="py-16">
+      <h3 className="subhead-text">Our Clients.</h3>
+      <div className="mt-5 flex flex-col gap-3 text-slate-800">
+        <p>
+          We've worked with different clients, leveraging🚀 their Business and
+          Sky Rocketing🚀 there Sales. Here's the rundown:
+        </p>
+      </div>
+
+      {/* Using React Vertical Timeline Component library to actually modify and create the timeline along with the animations */}
+      {/* Work History show krne ke liye client ko hm Timeline ke component ko use krrhe hain */}
+      <div className="mt-12 flex">
+        <VerticalTimeline>
+          {/* Experience ke array ko map krleinge aur experienceElement ke andar show krdeinge hm use */}
+          {experiences.map((experience) => (
+            <VerticalTimelineElement
+              key={experience.company_name}
+              date={experience.date}
+              icon={
+                <div className="flex justify-center items-center w-full h-full">
+                  <img
+                    src={experience.icon}
+                    alt={experience.company_name}
+                    className="w-[60%] h-[60%] object-contain"
+                  />
+                </div>
+              }
+              iconStyle={{ background: experience.iconBg }}
+              contentStyle={{
+                borderBottom: "8px",
+                borderStyle: "solid",
+                borderBottomColor: experience.iconBg,
+                boxShadow: "none",
+              }}
+              className="hover-effect" // Applying custom hover class
+            >
+              <div>
+                <h3 className="text-black text-xl font-poppins font-semibold">
+                  {experience.title}
+                </h3>
+                <p
+                  className="text-black-500 font-medium font-base"
+                  style={{ margin: 0 }}
+                >
+                  {experience.company_name}
+                </p>
+              </div>
+
+              {/* Here we explain in the bullet points that what we actually do at that company  */}
+              <ul className="my-5 list-disc ml-5 space-y-2">
+                {experience.points.map((point, index) => (
+                  <li
+                    key={`experience-point-${index}`}
+                    className="text-black-500/50 font-normal pl-1 text-sm"
+                  >
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+      </div>
+
+    </div>
+
 ## 3D Image Rendering -- npm i @react-three/fiber
 
 - import {canvas} from "@react-three/fiber"
@@ -415,3 +484,4 @@ useEffect(() => {
 - React Scroll -- npm library to be used to scroll the projects.
 - useNavigate hook is provided by react-router-dom aur iske through hm navigate krskte hain.
 - useNavigate ke andar -- -1 as an argument deinge hm to iska mtlb yh hota hai ke hmein previous page pe lejao.
+- flex-1 se equal amount of space leinge div

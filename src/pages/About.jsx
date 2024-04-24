@@ -19,19 +19,35 @@ const About = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 2 }}
         viewport={{ once: true }}
-        className="head-text"
+        className="font-semibold sm:leading-snug font-poppins text-4xl"
       >
-        Hello, This is{" "}
-        <span className="blue-gradient_text font-semibold drop-shadow">
-          A Bit Much Co.
+        About{" "}
+        <span className="blue-gradient_text font-semibold drop-shadow text-4xl">
+          Us
         </span>
       </motion.h1>
 
       {/* Explanation of the company */}
-      <div className="mt-5 flex flex-col gap-3 text-slate-800">
-        <p>
-          Digital Animation Agency based in United States, specializing in
-          creating High Resolution Motion Graphics and Animations that Rocks!
+      <div className="mt-5 flex flex-col  text-slate-800">
+        <h2 className="font-poppins font-semibold text-xl drop-shadow-md  ">
+          Who{" "}
+          <span className="bg-gradient-to-r from-[#c86b6b] via-[#bd6ac0] to-[#184ed4] bg-clip-text text-transparent">
+            We
+          </span>{" "}
+          Are
+        </h2>
+        <p className=" text-justify font-normal">
+          We are a dedicated team of experts specializing in data center Remote
+          Hands Support.
+        </p>
+        <h2 className="font-poppins font-semibold text-xl drop-shadow-md">
+          Our{" "}
+          <span className="bg-gradient-to-r from-[#c86b6b] via-[#bd6ac0] to-[#184ed4] bg-clip-text text-transparent">
+            Commitment
+          </span>
+        </h2>
+        <p className=" text-slate-800 text-justify">
+          We provide reliable and responsive assistance whenever you need it.
         </p>
       </div>
 
@@ -78,72 +94,6 @@ const About = () => {
         </motion.div>
       </div>
       <hr className="border-slate-200 mt-10" />
-
-      {/* Experience of A Bit Much*/}
-      <div className="py-16">
-        <h3 className="subhead-text">Our Clients.</h3>
-        <div className="mt-5 flex flex-col gap-3 text-slate-800">
-          <p>
-            We've worked with different clients, leveraging🚀 their Business and
-            Sky Rocketing🚀 there Sales. Here's the rundown:
-          </p>
-        </div>
-
-        {/* Using React Vertical Timeline Component library to actually modify and create the timeline along with the animations */}
-        {/* Work History show krne ke liye client ko hm Timeline ke component ko use krrhe hain */}
-        <div className="mt-12 flex">
-          <VerticalTimeline>
-            {/* Experience ke array ko map krleinge aur experienceElement ke andar show krdeinge hm use */}
-            {experiences.map((experience) => (
-              <VerticalTimelineElement
-                key={experience.company_name}
-                date={experience.date}
-                icon={
-                  <div className="flex justify-center items-center w-full h-full">
-                    <img
-                      src={experience.icon}
-                      alt={experience.company_name}
-                      className="w-[60%] h-[60%] object-contain"
-                    />
-                  </div>
-                }
-                iconStyle={{ background: experience.iconBg }}
-                contentStyle={{
-                  borderBottom: "8px",
-                  borderStyle: "solid",
-                  borderBottomColor: experience.iconBg,
-                  boxShadow: "none",
-                }}
-                className="hover-effect" // Applying custom hover class
-              >
-                <div>
-                  <h3 className="text-black text-xl font-poppins font-semibold">
-                    {experience.title}
-                  </h3>
-                  <p
-                    className="text-black-500 font-medium font-base"
-                    style={{ margin: 0 }}
-                  >
-                    {experience.company_name}
-                  </p>
-                </div>
-
-                {/* Here we explain in the bullet points that what we actually do at that company  */}
-                <ul className="my-5 list-disc ml-5 space-y-2">
-                  {experience.points.map((point, index) => (
-                    <li
-                      key={`experience-point-${index}`}
-                      className="text-black-500/50 font-normal pl-1 text-sm"
-                    >
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </VerticalTimelineElement>
-            ))}
-          </VerticalTimeline>
-        </div>
-      </div>
 
       {/* Creating CTA -->> So as everybody redirect to the contact page */}
       <hr className="border-slate-200" />

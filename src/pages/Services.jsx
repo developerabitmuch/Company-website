@@ -10,44 +10,38 @@ const Services = () => {
 
   return (
     <section className="max-container ">
-      {/* Heading */}
-      <motion.h1
-        initial={{ opacity: -3, x: 0 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 2 }}
-        viewport={{ once: true }}
-        className="head-text"
-      >
-        Our{" "}
-        <span className="blue-gradient_text font-semibold drop-shadow">
-          Services
-        </span>
-      </motion.h1>
-
-      {/* Brief Explanation regarding the projects */}
-      <div className="mt-5 flex flex-col gap-3 text-slate-800 text-justify">
-        <motion.p
-          initial={{ opacity: 0, x: 500 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 2 }}
-          viewport={{ once: true }}
-        >
-          We've embarked with numerous clients throughout the years, but these
-          are the one closest to our heart. Many of them are open-source, so if
-          you come across something that piques your interest, feel free to
-          explore the codebase and contribute your ideas for further
-          enhancements. Your Collaboration is highly valued!
-        </motion.p>
+      <h1 className=" font-semibold sm:leading-snug font-poppins text-4xl bg-gradient-to-t from-[#deef7e] via-[#bf5dc1] to-[#2249b6] bg-clip-text text-transparent">
+        Services
+      </h1>
+      {/* coloum div */}
+      <div className="md:flex items-center justify-between py-4">
+        <div className="flex-1 md:border-r border-slate-200 px-1 ">
+          <h1 className="font-poppins font-semibold text-2xl drop-shadow-md underline ">
+            What{" "}
+            <span className="bg-gradient-to-r from-[#c86b6b] via-[#bd6ac0] to-[#184ed4] bg-clip-text text-transparent">
+              We
+            </span>{" "}
+            Offer
+          </h1>
+          <p className="text-justify py-4 pr-4">
+            We provide a range of Remote Hands Support services, including
+            server reboots, hardware replacements, cable management, and more.
+          </p>
+        </div>
+        <div className="flex-1 md:pl-4 py-2">
+          <h1 className="font-poppins font-semibold text-2xl drop-shadow-md underline ">
+            Custom{" "}
+            <span className="bg-gradient-to-r from-[#c86b6b] via-[#bd6ac0] to-[#184ed4] bg-clip-text text-transparent">
+              Service
+            </span>{" "}
+            Packages
+          </h1>
+          <p className="text-justify py-4 pr-4">
+            We offer customizable service packages tailored to your specific
+            needs and budget.
+          </p>
+        </div>
       </div>
-      <hr className="border-slate-200 mt-10" />
-
-      {/* Carousel using Swiperjs */}
-      <div className="w-full min-h-[1000px]  flex my-auto pb-14 justify-center px-10 ">
-        <SliderCarousel projects={projects} />
-      </div>
-      <hr className="border-slate-200 mt-10" />
-
-      <CTA />
     </section>
   );
 };
