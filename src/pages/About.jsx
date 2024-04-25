@@ -19,34 +19,36 @@ const About = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 2 }}
         viewport={{ once: true }}
-        className="font-semibold sm:leading-snug font-poppins text-4xl"
+        className="font-semibold sm:leading-snug font-poppins text-5xl"
       >
         About{" "}
-        <span className="blue-gradient_text font-semibold drop-shadow text-4xl">
+        <span className="blue-gradient_text font-semibold drop-shadow text-5xl">
           Us
         </span>
       </motion.h1>
 
       {/* Explanation of the company */}
       <div className="mt-5 flex flex-col  text-slate-800">
-        <h2 className="font-poppins font-semibold text-xl drop-shadow-md  ">
+        <h2 className="font-poppins font-semibold text-3xl drop-shadow-md  ">
           Who{" "}
           <span className="bg-gradient-to-r from-[#c86b6b] via-[#bd6ac0] to-[#184ed4] bg-clip-text text-transparent">
             We
           </span>{" "}
           Are
         </h2>
-        <p className=" text-justify font-normal">
+        <p className=" text-justify font-semibold text-lg">
           We are a dedicated team of experts specializing in data center Remote
           Hands Support.
         </p>
-        <h2 className="font-poppins font-semibold text-xl drop-shadow-md">
+        <br />
+        <h2 className="font-poppins font-semibold text-3xl drop-shadow-md">
           Our{" "}
           <span className="bg-gradient-to-r from-[#c86b6b] via-[#bd6ac0] to-[#184ed4] bg-clip-text text-transparent">
             Commitment
           </span>
+          <br />
         </h2>
-        <p className=" text-slate-800 text-justify">
+        <p className=" text-slate-800 text-justify font-semibold text-lg">
           We provide reliable and responsive assistance whenever you need it.
         </p>
       </div>
@@ -82,11 +84,11 @@ const About = () => {
             <div className="block-container w-20 h-20" key={skill.name}>
               {/* a self closing div for the btn-back take animation ki trhn lage */}
               <div className="btn-back rounded-xl" />
-              <div className="btn-front rounded-xl flex justify-center items-center">
+              <div className="btn-front rounded-xl flex justify-center items-center hover:animate-spin">
                 <img
                   src={skill.imageUrl}
                   alt={skill.name}
-                  className="w-1/2 h-1/2 object-contain"
+                  className="w-1/2 h-1/2 object-contain hover:animate-spin"
                 />
               </div>
             </div>

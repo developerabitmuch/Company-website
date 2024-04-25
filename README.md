@@ -484,4 +484,6 @@ useEffect(() => {
 - React Scroll -- npm library to be used to scroll the projects.
 - useNavigate hook is provided by react-router-dom aur iske through hm navigate krskte hain.
 - useNavigate ke andar -- -1 as an argument deinge hm to iska mtlb yh hota hai ke hmein previous page pe lejao.
-- flex-1 se equal amount of space leinge div
+- flex-1 se equal amount of space leinge div mein.
+- Sticky se navbar ko stick krdeinge hm top pe.
+- Sticky aur bottom-0 se hmare pass footer jo hai wo bilkul neche chipak jaega all the way.

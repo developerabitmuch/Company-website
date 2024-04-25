@@ -5,7 +5,11 @@ import logo from "../assets/logo/logo_navbar.jpg";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [selectedNavLink, setSelectedNavLink] = useState(null);
+
+  const handleNavLinkClick = (event) => {
+    setSelectedNavLink(event.target.textContent);
+  };
 
   const [nav, setNav] = useState(false);
   //setting it to false when ever the button is called to show the cross button
@@ -15,10 +19,8 @@ const Navbar = () => {
     <header className="header ">
       <NavLink
         to="/"
-        className="md:w-14 w-10 md:h-14 h-10 rounded-lg bg-white items-center justify-between flex font-bold  shadow-md "
-        onClick={() => {
-          setIsActive(true);
-        }}
+        className=" md:h-14 h-10 rounded-lg  items-center justify-between flex font-bold  shadow-md navbar-ul"
+        onClick={handleNavLinkClick}
       >
         <img
           src={logo}
@@ -27,49 +29,50 @@ const Navbar = () => {
         />
         {/* Use the imported logo image */}
       </NavLink>
-      <nav className="md:flex text-lg gap-7 font-medium hidden ">
+      <nav className="md:flex text-lg gap-7 font-medium hidden">
         <NavLink
           to="/about"
-          className={({ isActive }) => {
-            isActive ? "text-blue-500" : "text-black";
-          }}
-          onClick={() => setIsActive(true)}
+          className={`nav-link ${
+            selectedNavLink === "About" ? "selected" : ""
+          }`}
+          activeClassName="active-nav-link"
+          onClick={handleNavLinkClick}
         >
           About
         </NavLink>
         <NavLink
           to="/work"
-          className={({ isActive }) => {
-            isActive ? "text-blue-500" : "text-black";
-          }}
-          onClick={() => setIsActive(true)}
+          className={`nav-link ${selectedNavLink === "Work" ? "selected" : ""}`}
+          activeClassName="active-nav-link"
+          onClick={handleNavLinkClick}
         >
           Work
         </NavLink>
         <NavLink
           to="/services"
-          className={({ isActive }) => {
-            isActive ? "text-blue-500" : "text-black";
-          }}
-          onClick={() => setIsActive(true)}
+          className={`nav-link ${
+            selectedNavLink === "Services" ? "selected" : ""
+          }`}
+          activeClassName="active-nav-link"
+          onClick={handleNavLinkClick}
         >
           Services
         </NavLink>
         <NavLink
           to="/faqs"
-          className={({ isActive }) => {
-            isActive ? "text-blue-500" : "text-black";
-          }}
-          onClick={() => setIsActive(true)}
+          className={`nav-link ${selectedNavLink === "FAQs" ? "selected" : ""}`}
+          activeClassName="active-nav-link"
+          onClick={handleNavLinkClick}
         >
           FAQs
         </NavLink>
         <NavLink
           to="/contact"
-          className={({ isActive }) => {
-            isActive ? "text-blue-500" : "text-black";
-          }}
-          onClick={() => setIsActive(true)}
+          className={`nav-link ${
+            selectedNavLink === "Contact" ? "selected" : ""
+          }`}
+          activeClassName="active-nav-link"
+          onClick={handleNavLinkClick}
         >
           Contact
         </NavLink>

@@ -35,7 +35,7 @@ const SliderCarousel = ({ projects }) => {
           <SwiperSlide key={project.name}>
             <div
               onClick={() => handleClickToNavigate(project)}
-              className=" py-5 min-w-fit m-20 flex flex-col items-center justify-center min-h-[600px] bg-gradient-to-t from-blue-800 to-purple-800 rounded-md shadow-lg"
+              className=" py-5 w-full m-20 flex flex-col items-center justify-center min-h-[600px] bg-gradient-to-t from-blue-800 to-purple-800 rounded-md shadow-lg"
             >
               <div className="block-container xl:h-[450px] lg:h-[400px] md:h-[450px] sm:h-[430px] px-4 flex items-center justify-center ">
                 {/* <div className={`btn-bac rounded-xl ${project.theme}`} /> */}

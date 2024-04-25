@@ -23,7 +23,7 @@ body:has(.card[data-color="green"]:hover) {
 
 @layer utilities {
   .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-screen;
+    @apply w-full p-16 min-h-[calc(100vh-80px)];
   }
 
   .head-text {
@@ -52,7 +52,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .header {
-    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
+    @apply flex justify-between items-center sm:px-16 px-8 py-4 top-0   z-10 right-0 left-0;
   }
 
   .footer {
@@ -72,7 +72,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .cta {
-    @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
+    @apply w-full flex items-center md:flex-row flex-col pb-10 sm:mt-16 mt-8 gap-7;
   }
 
   .cta-text {
@@ -209,4 +209,41 @@ body:has(.card[data-color="green"]:hover) {
   cursor: pointer;
   transform: scale(1.1); /* Slightly enlarge the element */
   transition: transform 0.3s ease; /* Smooth transition for background and scale */
+}
+
+/* spin animation on hover on about page */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*list items hover effect for navbar  */
+.nav-link {
+  padding: 0.5rem 1rem;
+  border: 1px solid #6d95c2; /* Add border */
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #4a90e2; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+}
+
+.active-nav-link {
+  background-color: #4a90e2; /* Change background color for active link */
+  color: #fff; /* Change text color for active link */
+}
+
+/* selected class on select */
+.selected {
+  color: #fff; /* Change color to your desired color */
+  background-color: #18386b;
 }

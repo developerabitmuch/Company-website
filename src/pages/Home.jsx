@@ -5,15 +5,19 @@ import Loader from "../components/Loader";
 
 // Importing 3D models
 import Logo from "../models/Logo";
+// import HomeInfo from "../components/HomeInfo";
+// import Skunk from "../models/Skunk";
 
 // Importing Sound
 import sakura from "../assets/sakura.mp3";
+
+// Import the image
+// import backgroundImage from "../assets/bg_image/bg.jpg";
 
 // TO actually move the cube with the mouse
 import { OrbitControls } from "@react-three/drei";
 import transition from "../transition";
 import { soundoff, soundon } from "../assets/icons";
-import Skunk_duck from "../models/Skunk_duck";
 
 const Home = () => {
   // Rotation apply krne ke liye hmein posotion change krni hogi object ki
@@ -94,7 +98,7 @@ const Home = () => {
   // className="w-full h-screen relative bg-blue-950 "
   return (
     <section
-      className="flex justify-center items-center h-screen bg-cover bg-center bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800"
+      className="flex justify-center items-center h-screen bg-cover bg-center "
       // style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* popup on home screen  */}
@@ -110,7 +114,10 @@ const Home = () => {
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
-          <OrbitControls enableZoom={true} enablePan={true} />
+          <OrbitControls
+          // enableZoom={false}
+          // enablePan={false}
+          />
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={1} />
           <hemisphereLight
@@ -121,11 +128,6 @@ const Home = () => {
           {/* <Skunk isRotating={isRotating} /> */}
           {/* Abit Much Logo */}
           <Logo />
-          {/* <Skunk_duck
-          // position={[0.5, 0.35, 0]}
-          // rotation={[-12.6, -0.6, 0]} // apni screen ke hisab se adjust krleinge hm yh sb coordinates
-          // scale={[0.1, 0.1, 0.1]}
-          /> */}
           {/* 3D Models importing here*/}
           {/* bird that will move */}
           {/* <Bird /> */}
