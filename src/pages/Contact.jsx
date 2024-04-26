@@ -9,7 +9,7 @@ import Alert from "../components/Alert";
 import transition from "../transition";
 
 // importing gif
-import contact from "../assets/gif/contact.gif";
+import new_contact from "../assets/gif/new_contact.gif";
 
 const Contact = () => {
   // form ka ref bna rhe hain
@@ -175,7 +175,7 @@ const Contact = () => {
       </div>
       {/* 3D Fox ke liye hm yh bnarhe hain */}
       <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px] flex items-center justify-center">
-        <img src={contact} alt="contact gif" className="w-[700px] " />
+        <img src={new_contact} alt="contact gif" className="w-[500px] " />
         {/* Canvas ke andar fox ki jsx show krdeinge hm aur yh chalti hai camera ke andar */}
         {/* Canvas mein Camera ke andar hm props bhjrhe hain bht sare */}
         {/* <Canvas
