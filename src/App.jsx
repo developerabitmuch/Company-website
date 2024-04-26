@@ -23,7 +23,7 @@ const App = () => {
             <Route path="/portfolio" element={<Portfolio />} />
           </Routes>
         </AnimatePresence>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </main>
   );

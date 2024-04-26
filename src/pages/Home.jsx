@@ -157,14 +157,14 @@ const Home = () => {
       </Canvas>
 
       {/* Sound ko manage krrhe hain hm toggle pe*/}
-      <div className="absolute bottom-2 left-2">
+      {/* <div className="absolute bottom-2 left-2">
         <img
           src={!isPlayingMusic ? soundon : soundoff}
           alt="sound"
           className="w-10 h-10 cursor-pointer object-contain"
           onClick={() => setIsPlayingMusic(!isPlayingMusic)}
         />
-      </div>
+      </div> */}
     </section>
   );
 };

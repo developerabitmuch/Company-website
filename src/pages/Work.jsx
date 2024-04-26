@@ -3,7 +3,9 @@ import transition from "../transition";
 import CTA from "../components/CTA";
 import SliderCarousel from "../components/SliderCarousel";
 import { motion } from "framer-motion";
-// import { arrow } from "../assets/icons";
+
+// skunk 2d image
+import duck from "../assets/skunk_img/Duck.png";
 
 const Work = () => {
   console.log("Projects: ", projects);
@@ -89,13 +91,13 @@ const Work = () => {
         </div>
 
         {/* The right side of the div on the screen and it has the swiper scroller*/}
-        <div className="w-full min-h-full flex-1 bg-green-400 my-auto pb-14 justify-center px-10 ">
-          <h1>Image will come here</h1>
+        <div className="w-full h-full flex-1 my-auto pb-14  px-10  items-center ">
+          <img src={duck} alt="skunk image" className="pl-32 h-[500px]" />
         </div>
       </section>
 
       {/* slider bar */}
-      <div className="w-full min-h-[800px]  flex my-auto  justify-center px-10 ">
+      <div className="w-full min-h-[1000px]  flex my-auto  justify-center px-10 ">
         <SliderCarousel projects={projects} />
       </div>
       <hr className="border-slate-200 mt-10" />

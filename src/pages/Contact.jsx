@@ -8,6 +8,9 @@ import { a } from "@react-spring/three";
 import Alert from "../components/Alert";
 import transition from "../transition";
 
+// importing gif
+import contact from "../assets/gif/contact.gif";
+
 const Contact = () => {
   // form ka ref bna rhe hain
   const formRef = useRef(null);
@@ -171,10 +174,11 @@ const Contact = () => {
         </form>
       </div>
       {/* 3D Fox ke liye hm yh bnarhe hain */}
-      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
+      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px] flex items-center justify-center">
+        <img src={contact} alt="contact gif" className="w-[700px] " />
         {/* Canvas ke andar fox ki jsx show krdeinge hm aur yh chalti hai camera ke andar */}
         {/* Canvas mein Camera ke andar hm props bhjrhe hain bht sare */}
-        <Canvas
+        {/* <Canvas
           camera={{
             position: [0, 0, 5],
             fov: 75,
@@ -182,19 +186,19 @@ const Contact = () => {
             far: 1000,
           }}
         >
-          <directionalLight intensity={2.5} position={[0, 0, 1]} />
-          <ambientLight intensity={0.5} />
-          <Suspense fallback={<Loader />}>
-            {/* props send krrhe hain Fox ke andar yhn pe jo ke hm component mein jake destructure krleinge apne pass */}
-            {/* Yh jo Current Animation pass krrhe hain yh hmare pass different animations hai Fox ki joke hm apply krrhe hain */}
-            <Fox
+          <directionalLight intensity={2.5} position={[0, 0, 1]} /> */}
+        {/* <ambientLight intensity={0.5} /> */}
+        {/* <Suspense fallback={<Loader />}> */}
+        {/* props send krrhe hain Fox ke andar yhn pe jo ke hm component mein jake destructure krleinge apne pass */}
+        {/* Yh jo Current Animation pass krrhe hain yh hmare pass different animations hai Fox ki joke hm apply krrhe hain */}
+        {/* <Fox
               currentAnimation={currentAnimation}
               position={[0.5, 0.35, 0]}
               rotation={[12.6, -0.6, 0]} // apni screen ke hisab se adjust krleinge hm yh sb coordinates
               scale={[0.4, 0.4, 0.4]}
-            />
-          </Suspense>
-        </Canvas>
+            /> */}
+        {/* </Suspense> */}
+        {/* </Canvas> */}
       </div>
     </section>
   );

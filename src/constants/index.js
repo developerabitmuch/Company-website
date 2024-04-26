@@ -1,30 +1,11 @@
 import { meta, shopify, starbucks, tesla } from "../assets/images";
-import {
-  car,
-  contact,
-  css,
-  estate,
-  express,
-  git,
-  github,
-  html,
-  javascript,
-  linkedin,
-  mongodb,
-  motion,
-  mui,
-  nextjs,
-  nodejs,
-  pricewise,
-  react,
-  redux,
-  sass,
-  snapgram,
-  summiz,
-  tailwindcss,
-  threads,
-  typescript,
-} from "../assets/icons";
+import { contact } from "../assets/icons";
+
+// importing icons for footer
+import fb from "../assets/icons_abitmuch/fb.png";
+import tiktok from "../assets/icons_abitmuch/tiktok.png";
+import youtube from "../assets/icons_abitmuch/youtube.png";
+import linkedin from "../assets/icons_abitmuch/linkedin.png";
 
 // Importing Skills Logo
 import adobe from "../assets/icons_abitmuch/adobe.png";
@@ -181,14 +162,24 @@ export const socialLinks = [
     link: "/contact",
   },
   {
-    name: "GitHub",
-    iconUrl: github,
-    link: "https://github.com/YourGitHubUsername",
+    name: "Facebook",
+    iconUrl: fb,
+    link: "https://www.facebook.com ",
   },
   {
     name: "LinkedIn",
     iconUrl: linkedin,
-    link: "https://www.linkedin.com/in/YourLinkedInUsername",
+    link: "https://www.linkedin.com/company/a-bit-much-co/mycompany/",
+  },
+  {
+    name: "TikTok",
+    iconUrl: tiktok,
+    link: "https://www.tiktok.com ",
+  },
+  {
+    name: "Youtube",
+    iconUrl: youtube,
+    link: "https://www.linkedin.com/company/a-bit-much-co/mycompany/",
   },
 ];
 

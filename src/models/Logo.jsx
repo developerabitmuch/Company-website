@@ -28,8 +28,8 @@ const Logo = (props) => {
   });
 
   return (
-    <a.group {...props} scale={[15, 15, 15]} ref={logoRef}>
-      <a.group position={[0, -0.05, 0]}>
+    <a.group {...props} scale={[10, 10, 10]} ref={logoRef}>
+      <a.group position={[0, 0.025, 0]}>
         <mesh geometry={nodes["logo-Mat"].geometry} material={materials.Mat} />
         <mesh
           geometry={nodes["logo-Mat002"].geometry}
