@@ -23,7 +23,7 @@ const Portfolio = () => {
   console.log("Portfolio Coming :", portfolio);
 
   return (
-    <div className=" mx-auto px-4 h-[100vh] pt-12">
+    <div className=" mx-auto px-4 min-h-screen pt-12">
       {/* Heading of the portfolio */}
       <h1 className="pt-24 pb-2 xl:text-5xl lg:text-4xl text-xl text-center font-poppins font-semibold  mb-10 blue-gradient_text">
         {name}
