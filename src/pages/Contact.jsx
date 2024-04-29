@@ -2,7 +2,7 @@ import { useState, useRef, Suspense } from "react";
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import Fox from "../models/Fox";
-import Loader from "../components/Loader";
+import LoaderCom from "../components/LoaderCom";
 import useAlert from "../hooks/useAlert";
 import { a } from "@react-spring/three";
 import Alert from "../components/Alert";
@@ -188,7 +188,7 @@ const Contact = () => {
         >
           <directionalLight intensity={2.5} position={[0, 0, 1]} /> */}
         {/* <ambientLight intensity={0.5} /> */}
-        {/* <Suspense fallback={<Loader />}> */}
+        {/* <Suspense fallback={<LoaderCom />}> */}
         {/* props send krrhe hain Fox ke andar yhn pe jo ke hm component mein jake destructure krleinge apne pass */}
         {/* Yh jo Current Animation pass krrhe hain yh hmare pass different animations hai Fox ki joke hm apply krrhe hain */}
         {/* <Fox

@@ -89,7 +89,7 @@ const Navbar = () => {
         className={
           !nav
             ? "hidden"
-            : "absolute bg-gradient-to-br from-blue-900 via-pink-300 to-blue-900  top-0 left-0 w-full h-screen flex flex-col justify-center items-center "
+            : "absolute bg-gradient-to-br from-blue-900 via-pink-300 to-blue-900 z-20 top-0 left-0 w-full h-screen flex flex-col justify-center items-center "
         }
       >
         <li className="py-6 text-4xl">
@@ -100,6 +100,11 @@ const Navbar = () => {
         <li className="py-6 text-4xl">
           <NavLink onClick={handleclick} to="/about" duration={500}>
             About
+          </NavLink>
+        </li>
+        <li className="py-6 text-4xl">
+          <NavLink onClick={handleclick} to="/work" duration={500}>
+            Work
           </NavLink>
         </li>
         <li className="py-6 text-4xl">

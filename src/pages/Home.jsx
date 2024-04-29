@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import Loader from "../components/Loader";
+import LoaderCom from "../components/LoaderCom";
 
 // Importing 3D models
 import Logo from "../models/Logo";
@@ -15,7 +15,7 @@ import sakura from "../assets/sakura.mp3";
 // import backgroundImage from "../assets/bg_image/bg.jpg";
 
 // TO actually move the cube with the mouse
-import { OrbitControls } from "@react-three/drei";
+import { Loader, OrbitControls } from "@react-three/drei";
 import transition from "../transition";
 import { soundoff, soundon } from "../assets/icons";
 
@@ -113,10 +113,17 @@ const Home = () => {
         }`}
         camera={{ near: 0.1, far: 1000 }}
       >
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<LoaderCom />}>
+          {/* Orbit Controls ke through hm camera ki position ko maintain krskte hain according to our requirement */}
           <OrbitControls
-          // enableZoom={false}
-          // enablePan={false}
+            minAzimuthAngle={-Math.PI / 4}
+            maxAzimuthAngle={Math.PI / 4}
+            minPolarAngle={0}
+            maxPolarAngle={Math.PI / 2}
+            minDistance={2}
+            maxDistance={15}
+            // enableZoom={false}
+            // enablePan={false}
           />
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={1} />
@@ -155,6 +162,9 @@ const Home = () => {
           /> */}
         </Suspense>
       </Canvas>
+      {/* Loading screen to show before we enter */}
+      {/* Loader from Drei library */}
+      <Loader />
 
       {/* Sound ko manage krrhe hain hm toggle pe*/}
       {/* <div className="absolute bottom-2 left-2">

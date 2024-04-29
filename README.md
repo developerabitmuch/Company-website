@@ -444,6 +444,63 @@ useEffect(() => {
 - mobile screen pe meine ham burger lgadia hai website mein aur website pe hmari jb hm home screen pe hnge to hmare pass hamburger show krega website pe.
 - uske ilawa hmare pass nav bar show krega
 
+## Blockade labs - https://www.blockadelabs.com/
+
+- yh aik 3d prompt-ai image generator hai jisko hm use krskte hain according to our requirement.
+- command se bhi khud jsx bnadeti hai take hm usko use krlein --
+- npx gltfjsx public/models/Fish.gltf -o "src/components/Fish.jsx" -r "public" -- is command ko terminal mein chalane se hmare pass yh jsx bnadega us component mein jhn hmne bnaya hai usko.
+
+## Lottie Files Animations:
+
+- We can use the animations by using these lottie files and we can have them inside our jsx files and use them according to our requirements.
+- we can download a json file for this and we will be actually using this file according to our requirement and need all the way.
+- animation search krke select krleinge hm apne pass aur phr hm usko download krleinge apne pass jsx file ko.
+- json file ajaegi hmare pass svg ki animations hain yh hmare pass to.
+- npm i lottie-react
+- uske bad to yh to bs halwa hai jis bhi component mein hmne use krna hoga apni animation ko hm us jagah pe bs lottie ke component ko call kreinge aur bs us lottie ke svg ko parameter animationData mein pass krdeinge hm bs apne pass all the way.
+- import Lottie from "lottie-react"
+- import animationData from "./assets/phone-animation.json" -- yh wo image hai jo hm download krrhe hain Lottie se json file svg ki aur isko hm use kreinge apne pass as a parameter. -<Lottie animationData={animationData}> -- bs is aik component ko hm use krleinge apne pass jhn hmne animation ko use krna hai aur bs props mein hm bs as an argument animationData pass krdeinge.
+- Lottie ke component ke andar hm aur sare arguments hain jo hm pass kr skte hain aur unko use krskte hain apne pass.
+- Reference bna dia hai hmne aur us reference ke accordingly hm animation ko move krrhe hain apne pass.
+
+## React-Three-Fiber R3F:
+
+- market.pmnd.rs aik market place hai isse hm models leskte hain 3d aur unko use krskte hain apne projects mein.
+
+## Loader before the website opens:
+
+- Creating a loader in the website before the website opens so we will be doing this using the useState and useEfect hook on the rendering of the main component therefore we will going to use it and the logic will be of the timeout and by using the timeout technique we will use the technique all the way by making a particular State and changing its value to true and false on the requirement like when the website loads it renders the main component before rendering the component I want to run useEffect and in it there is the loader that we will add and set timeout to it until our heavy 3D models load up and this is how the things are actually working all the way for us.
+- A quick and easy loading overlay component that you can drop on top of your canvas. It's intended to "hide" the whole app, so if you have multiple suspense wrappers in your application, you should use multiple loaders. It will show an animated loadingbar and a percentage.
+
+<Canvas>
+  <Suspense fallback={null}>
+    <AsyncModels />
+  </Suspense>
+</Canvas>
+<Loader />
+
+- Yh Loader Drei library mein aik builtin component hai jo hm use krrhe hain apne pass yhn pe aur isko use krke hm apni website mein loader lgadeinge apne pass all the way aur apne hisab se hm isko customize krleinge taake hmari application run hojae all the way.
+
+- <Loader
+  containerStyles={...container} // Flex layout styles
+  innerStyles={...inner} // Inner container styles
+  barStyles={...bar} // Loading-bar styles
+  dataStyles={...data} // Text styles
+  dataInterpolation={(p) => `Loading ${p.toFixed(2)}%`} // Text
+  initialState={(active) => active} // Initial black out state
+
+  >
+
+- Hm yh sb styles bhi customize krskte hain according to our requirement aur unko use krskte hain hm apne hisab se override krke uper wali line mein hai ke kese override krdeinge hm styles ko according to our requirement.
+- Canvas ke bd bs Loader lgadeinge hm drei-library se import krke aur bs isko hm use krleinge according to our requirement.
+- Animated Loading Bar aati hai aur slide aati hai hmare pass Loader mein Drei library se jo hm import krrhe hote hain.
+- Yh hmare pass hmara drei library ka builtin loader hai jo ke agar hmare pass model nhi load hua wa hoga to hmare pass yh aik animated loader line show krdega aur phr automatic screen pe leke chala jaega hmein yh according to our requirement aur phr hm isko use krleinge apne pass.
+- Lekin hm agr chahte hain screen open ho aur hm screen pe click krein aur phr hm us hisab se enter kr jaein screen ke andar to hm kreinge yh ke apna custom Loader bnadeinge aur useStates ki madad se hm us loader ko use kreinge apne pass.
+
+## market.pmnd.rs -- marketplace for 3d models
+
+- Yh market place hai 3d models ke liye hmare pass aur yhn ke models hm use kr rhe hain apne code mein phle hm model ko download krrhe hain aur phr uske bad hm models ke sath JSX ki jo file hai usko hm use krrhe hain apne pass all the way according to our requirement.
+
 # Extra Learning:
 
 - Tailwind ki utility classes ko hmne use kra hai ismein all the way aur sbse phle hmne environment set krlia hai apne pass Tailwind.config.js ko update krke.
@@ -487,3 +544,10 @@ useEffect(() => {
 - flex-1 se equal amount of space leinge div mein.
 - Sticky se navbar ko stick krdeinge hm top pe.
 - Sticky aur bottom-0 se hmare pass footer jo hai wo bilkul neche chipak jaega all the way.
+- hmne agr kisi bhi model ki animation list ko dekhna hai to hm actions ke object ko log krleinge apne pass aur usse hoga yh ke hmare pass animations ki list show krdega.
+- har chez ke color ke liye canvas mein hm use kreinge meshBasicMaterial, meshPortalMaterial -- yh sb chezein hm use kreinge apne pass take color add krlein.
+- Hm camera ki position ko achi trhn se use krskte hain apne pass yhn pe aur usse hoga yh hmare pass ke hm camera ki position ko different angles ke sath khel skte hain hm.
+- Wawa sensei ko follow krke 3js ke sare projects bnalo bht learning hojaegi achi trhn se.
+- .gltf file ko bhi hm use krskte hain apne pass all the way.
+- OrbitControls ke andar hm apne parameters dal skte hain according to our requirement hm apne controls ko adjust kr skte hain jese ke camera ko aur phr hm us hisab se apna scene create krskte hain.
+- <OrbitControls minAzimuthAngle={-Math.PI/4} maxAzimuthAngle={Math.PI/4} minPolarAngle={0} maxPolarAngle={Math.PI/2} minDistance={2} maxDistance={15}/> --- in attributes ke through hm apne camera ko control krkste hain according to our requirement all the way.
