@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import LoaderCom from "../components/LoaderCom";
+import LoaderScreen from "../components/Loader/LoaderScreen";
 
 // Importing 3D models
 import Logo from "../models/Logo";
@@ -20,6 +21,9 @@ import transition from "../transition";
 import { soundoff, soundon } from "../assets/icons";
 
 const Home = () => {
+  // State to manage when the screen opens and it closes
+  const [start, setStart] = useState(false);
+
   // Rotation apply krne ke liye hmein posotion change krni hogi object ki
   // state bnali hai hmne rotating ke liye
   const [isRotating, setIsRotating] = useState(false);
@@ -48,7 +52,9 @@ const Home = () => {
     return () => {
       audioRef.current.pause();
     };
-  }, [isPlayingMusic]);
+
+    setStart(true);
+  }, [isPlayingMusic, start]);
 
   // 3D model ko adjust krdeinge hm according to the screen size
   // abhi model show horha hai lekin adjust nhi hoa wa hai hmare pass yh model so we will going to
@@ -96,6 +102,16 @@ const Home = () => {
 
   // background image added
   // className="w-full h-screen relative bg-blue-950 "
+
+  const [isFirstTime, setIsFirstTime] = useState(true);
+
+  // handle start for loading
+  const handleStart = () => {
+    setStart(true);
+    setIsFirstTime(false);
+  };
+  console.log("start", start);
+
   return (
     <section
       className="flex justify-center items-center h-screen bg-cover bg-center "
@@ -105,7 +121,6 @@ const Home = () => {
       {/* <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div> */}
-
       {/* 3D Screen Animation*/}
       <Canvas
         className={`w-full h-screen bg-transparent ${
@@ -164,8 +179,10 @@ const Home = () => {
       </Canvas>
       {/* Loading screen to show before we enter */}
       {/* Loader from Drei library */}
-      <Loader />
-
+      {/* <Loader /> */}
+      {/* {isFirstTime && !start && (
+        <LoaderScreen start={start} setStart={handleStart} />
+      )} */}
       {/* Sound ko manage krrhe hain hm toggle pe*/}
       {/* <div className="absolute bottom-2 left-2">
         <img

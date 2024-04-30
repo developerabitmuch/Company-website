@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/logo/logo_navbar.jpg";
 
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -22,12 +22,12 @@ const Navbar = () => {
         className=" md:h-14 h-10 rounded-lg  items-center justify-between flex font-bold  shadow-md navbar-ul"
         onClick={handleNavLinkClick}
       >
+        {/* Use the imported logo image */}
         <img
           src={logo}
           alt="Logo"
           className="h-full w-full rounded-md object-cover"
         />
-        {/* Use the imported logo image */}
       </NavLink>
       <nav className="md:flex text-lg gap-7 font-medium hidden">
         <NavLink
@@ -41,14 +41,6 @@ const Navbar = () => {
           About
         </NavLink>
         <NavLink
-          to="/work"
-          className={`nav-link ${selectedNavLink === "Work" ? "selected" : ""}`}
-          activeClassName="active-nav-link"
-          onClick={handleNavLinkClick}
-        >
-          Work
-        </NavLink>
-        <NavLink
           to="/services"
           className={`nav-link ${
             selectedNavLink === "Services" ? "selected" : ""
@@ -58,14 +50,14 @@ const Navbar = () => {
         >
           Services
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/faqs"
           className={`nav-link ${selectedNavLink === "FAQs" ? "selected" : ""}`}
           activeClassName="active-nav-link"
           onClick={handleNavLinkClick}
         >
           FAQs
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to="/contact"
           className={`nav-link ${

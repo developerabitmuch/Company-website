@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { Home, About, Contact, Services, Work, Faqs } from "./pages";
+import { Home, About, Contact, Services, Faqs } from "./pages";
 
 // page transition ki animation run krne ke liye hm isko use krrhe hain framer-motion ko
 import { AnimatePresence } from "framer-motion";
@@ -16,11 +16,11 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/work" element={<Work />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/faqs" element={<Faqs />} />
+            {/* <Route path="/faqs" element={<Faqs />} /> */}
             <Route path="/contact" element={<Contact />} />
-            <Route path="/portfolio" element={<Portfolio />} />
+            {/* Dynamic Route bnarhe hain hm project page mein */}
+            <Route path="/:projectName" element={<Portfolio />} />
           </Routes>
         </AnimatePresence>
         <Footer />

@@ -193,6 +193,7 @@ export const projects = [
     description:
       " Concept art is a tool that allows the director to guide the visual styling of the project, with a cycle of rejections and approvals.",
     portfolio: [Emma, jaison, Lily, Black_Beard, Oliver, rabbit, ThornField],
+    slug: "concept-art",
   },
   {
     coverImg: ani15,
@@ -216,6 +217,7 @@ export const projects = [
       ani14,
       ani15,
     ],
+    slug: "character-development",
   },
   {
     coverImg: mot5,
@@ -223,6 +225,7 @@ export const projects = [
     description:
       "Motion Graphics is the combination of graphic design with animation techniques to create visually captivating and dynamic content.",
     portfolio: [mot1, mot2, mot3, mot4, mot5],
+    slug: "motion-graphics",
   },
   {
     coverImg: tec1,
@@ -230,6 +233,7 @@ export const projects = [
     description:
       "A techpack 3D designer integrates technological tools and software to develop detailed technical packages for product manufacturing, particularly in the fashion industry.",
     portfolio: [tec1, tec2, tec3, tec4, tec5, tec6, tec7],
+    slug: "techpack-designer",
   },
   // {
   //   coverImg: estate,

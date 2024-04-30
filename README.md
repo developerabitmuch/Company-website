@@ -496,10 +496,20 @@ useEffect(() => {
 - Animated Loading Bar aati hai aur slide aati hai hmare pass Loader mein Drei library se jo hm import krrhe hote hain.
 - Yh hmare pass hmara drei library ka builtin loader hai jo ke agar hmare pass model nhi load hua wa hoga to hmare pass yh aik animated loader line show krdega aur phr automatic screen pe leke chala jaega hmein yh according to our requirement aur phr hm isko use krleinge apne pass.
 - Lekin hm agr chahte hain screen open ho aur hm screen pe click krein aur phr hm us hisab se enter kr jaein screen ke andar to hm kreinge yh ke apna custom Loader bnadeinge aur useStates ki madad se hm us loader ko use kreinge apne pass.
+- apna custom loader bnane ke liye drei library se useProgress hook ko use krna prega hmein all the way.
+
+- Done!
+- Created the logic using the states and manage it using the useProgress hook and it starts the application and by using it I will be able to actually get in the application
 
 ## market.pmnd.rs -- marketplace for 3d models
 
 - Yh market place hai 3d models ke liye hmare pass aur yhn ke models hm use kr rhe hain apne code mein phle hm model ko download krrhe hain aur phr uske bad hm models ke sath JSX ki jo file hai usko hm use krrhe hain apne pass all the way according to our requirement.
+
+## Applying Dynamic Routing inside the services page:
+
+- Hm dynamic route bnaeinge apne pass aur usmein hm kreinge yh ke jb hm services mein slider pe click kreinge to wo hmein aik page pe leke jaega aur us page mein hmare pass data arha hoga uske ilawa us page ka url bilkul alag hoga har us service ke hisab se jis pe hm click krrhe hnge.
+- Dynamically hm route krrhe hain create using the id: <Route path="/:projectName" element={<Portfolio />} /> -- aise hm route bna rhe hain jo ke dynamic hoga aur phr hm dynamically us route pe jarhe hain.
+- uske ilawa hm navigate krte we bhi naam dynamically derhe hnge -- navigate(`/${project.slug}`); -- aise hm naam dedeinge dynamically aur phr wo route krdega hmein us path pe.
 
 # Extra Learning:
 
