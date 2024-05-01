@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo/logo_navbar.jpg";
+import logoGif from "../assets/logoGif/logo.gif";
 
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -19,14 +20,14 @@ const Navbar = () => {
     <header className="header ">
       <NavLink
         to="/"
-        className=" md:h-14 h-10 rounded-lg  items-center justify-between flex font-bold  shadow-md navbar-ul"
+        className=" md:h-14 h-10 rounded-lg  items-center justify-between flex font-bold  navbar-ul"
         onClick={handleNavLinkClick}
       >
         {/* Use the imported logo image */}
         <img
-          src={logo}
+          src={logoGif}
           alt="Logo"
-          className="h-full w-full rounded-md object-cover"
+          className="h-full w-full rounded-md object-contain"
         />
       </NavLink>
       <nav className="md:flex text-lg gap-7 font-medium hidden">

@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import "./portfolio.css";
+// import "./portfolio.css";
 import { Link, useLocation } from "react-router-dom";
 
 const Portfolio = () => {

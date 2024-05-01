@@ -15,7 +15,7 @@ import {
 
 // page transition ki animation run krne ke liye hm isko use krrhe hain framer-motion ko
 import { AnimatePresence } from "framer-motion";
-import Portfolio from "./pages/Portfolio";
+// import Portfolio from "./pages/Portfolio";
 import Footer from "./components/Footer";
 
 const App = () => {

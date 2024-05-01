@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import transition from "../../transition";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import { projects } from "../../constants";
+import Modal from "../../components/Modal";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import { Link } from "react-router-dom";
-
 const ConceptArt = () => {
   const { name, portfolio } = projects[0];
+
+  // Making State for the image of the modal to be used so as we use them according to our need
+  const [modalImage, setModalImage] = useState(null);
+
+  // opening this model and setting the image
+  const openModal = (imageUrl) => {
+    setModalImage(imageUrl);
+  };
+
+  // closing this model and removing the image
+  const closeModal = () => {
+    setModalImage(null);
+  };
 
   return (
     <div className=" mx-auto px-4 min-h-screen pt-12">
@@ -38,14 +50,18 @@ const ConceptArt = () => {
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="mySwiper"
       >
-        {portfolio.map((picture) => (
-          <SwiperSlide key={picture}>
-            <Link to={"/contact"}>
-              <img src={picture} alt={picture} className="hover:scale-y-100" />
-            </Link>
+        {portfolio.map((picture, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={picture}
+              alt={picture}
+              className="hover:scale-y-100 cursor-pointer"
+              onClick={() => openModal(picture)}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
+      {modalImage && <Modal imageUrl={modalImage} onClose={closeModal} />}
     </div>
   );
 };

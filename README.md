@@ -512,6 +512,9 @@ useEffect(() => {
 - uske ilawa hm navigate krte we bhi naam dynamically derhe hnge -- navigate(`/${project.slug}`); -- aise hm naam dedeinge dynamically aur phr wo route krdega hmein us path pe.
 - hm useParams hook ko use krke apne pass url ka naam get krskte hain aur agr hm chahte hain data send krna to wo hm state mein send krskte hain as an argument inside the path aur hm location mein us data ko get krskte hain apne pass.
 
+- Dynamic Page khtm krke hmne yhn pe 4 routed pages bnalie hain aur wo routes hmne jo bnae hain wo hm directly access krskte hain.
+- uske ilawa hmne yh 4 alag routes create krdie hain services ke aur hm unke through ab directly access krskte hain page mein aur model create krdia hai hmne
+
 # Extra Learning:
 
 - Tailwind ki utility classes ko hmne use kra hai ismein all the way aur sbse phle hmne environment set krlia hai apne pass Tailwind.config.js ko update krke.
