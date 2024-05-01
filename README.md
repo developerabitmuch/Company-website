@@ -510,6 +510,7 @@ useEffect(() => {
 - Hm dynamic route bnaeinge apne pass aur usmein hm kreinge yh ke jb hm services mein slider pe click kreinge to wo hmein aik page pe leke jaega aur us page mein hmare pass data arha hoga uske ilawa us page ka url bilkul alag hoga har us service ke hisab se jis pe hm click krrhe hnge.
 - Dynamically hm route krrhe hain create using the id: <Route path="/:projectName" element={<Portfolio />} /> -- aise hm route bna rhe hain jo ke dynamic hoga aur phr hm dynamically us route pe jarhe hain.
 - uske ilawa hm navigate krte we bhi naam dynamically derhe hnge -- navigate(`/${project.slug}`); -- aise hm naam dedeinge dynamically aur phr wo route krdega hmein us path pe.
+- hm useParams hook ko use krke apne pass url ka naam get krskte hain aur agr hm chahte hain data send krna to wo hm state mein send krskte hain as an argument inside the path aur hm location mein us data ko get krskte hain apne pass.
 
 # Extra Learning:
 

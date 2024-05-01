@@ -14,7 +14,7 @@ const SliderCarousel = ({ projects }) => {
 
   // Define handleClickToNavigate function outside of the component
   const handleClickToNavigate = (project) => {
-    navigate(`/${project.slug}`, {
+    navigate(`/services/${project.slug}`, {
       state: { name: project.name, portfolio: project.portfolio }, // pora project hi send krdia hai hmne as a state aur location mein get krrhe hain hm whn pe yh project
     });
   };
