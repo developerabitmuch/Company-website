@@ -227,7 +227,7 @@ body:has(.card[data-color="green"]:hover) {
   border: 1px solid #6d95c2; /* Add border */
   border-radius: 0.5rem;
   background-color: transparent;
-  color: #000;
+  color: white;
   text-decoration: none;
   transition: all 0.3s ease;
 }

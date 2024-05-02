@@ -10,9 +10,10 @@ import CTA from "../components/CTA";
 import transition from "../transition";
 import { motion } from "framer-motion";
 
+// . About Us Page: About [Your Company Name] At [Your Company Name], we are dedicated to providing top-notch security solutions to our clients. With years of experience in the industry, our team of experts is committed to delivering reliable, professional, and efficient camera monitoring services. We prioritize customer satisfaction and strive to exceed expectations with every project. When you choose [Your Company Name], you can trust that your property and assets are in safe hands.
 const About = () => {
   return (
-    <section className="max-container overflow-hidden">
+    <section className="max-container overflow-hidden bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800">
       {/* Heading hai yh  */}
       <motion.h1
         initial={{ opacity: 0, x: 0 }}
@@ -29,19 +30,24 @@ const About = () => {
 
       {/* Explanation of the company */}
       <div className="mt-5 flex flex-col  text-slate-800">
-        <h2 className="font-poppins font-semibold text-3xl drop-shadow-md  ">
+        {/* <h2 className="font-poppins font-semibold text-3xl drop-shadow-md  ">
           Who{" "}
           <span className="bg-gradient-to-r from-[#c86b6b] via-[#bd6ac0] to-[#184ed4] bg-clip-text text-transparent">
             We
           </span>{" "}
           Are
-        </h2>
-        <p className=" text-justify font-semibold text-lg">
-          We are a dedicated team of experts specializing in data center Remote
-          Hands Support.
+        </h2> */}
+        <p className=" text-justify font-semibold font-poppins text-lg">
+          At A Bit Much Co we are dedicated to providing top-notch security
+          solutions to our clients. With years of experience in the industry,
+          our team of experts is committed to delivering reliable, professional,
+          and efficient camera monitoring services. We prioritize customer
+          satisfaction and strive to exceed expectations with every project.
+          When you choose A Bit Much Co, you can trust that your property and
+          assets are in safe hands.
         </p>
         <br />
-        <h2 className="font-poppins font-semibold text-3xl drop-shadow-md">
+        {/* <h2 className="font-poppins font-semibold text-3xl drop-shadow-md">
           Our{" "}
           <span className="bg-gradient-to-r from-[#c86b6b] via-[#bd6ac0] to-[#184ed4] bg-clip-text text-transparent">
             Commitment
@@ -50,7 +56,7 @@ const About = () => {
         </h2>
         <p className=" text-slate-800 text-justify font-semibold text-lg">
           We provide reliable and responsive assistance whenever you need it.
-        </p>
+        </p> */}
       </div>
 
       <hr className="border-slate-200 mt-10" />

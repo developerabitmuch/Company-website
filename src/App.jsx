@@ -18,9 +18,11 @@ import { AnimatePresence } from "framer-motion";
 // import Portfolio from "./pages/Portfolio";
 import Footer from "./components/Footer";
 
+// bg -- bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800
+
 const App = () => {
   return (
-    <main className="bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800 ">
+    <main className="bg-[#1a2541]">
       <Router>
         <Navbar />
         <AnimatePresence mode="wait">
@@ -47,7 +49,7 @@ const App = () => {
             />
           </Routes>
         </AnimatePresence>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </main>
   );

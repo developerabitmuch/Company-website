@@ -30,7 +30,7 @@ const Navbar = () => {
           className="h-full w-full rounded-md object-contain"
         />
       </NavLink>
-      <nav className="md:flex text-lg gap-7 font-medium hidden">
+      <nav className="md:flex text-lg gap-7 font-medium hidden ">
         <NavLink
           to="/about"
           className={`nav-link ${

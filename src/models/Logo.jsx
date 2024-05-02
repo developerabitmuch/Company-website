@@ -23,12 +23,13 @@ const Logo = (props) => {
   useFrame((state, delta) => {
     // to rotate the logo using the ref
     // logoRef.current.rotation.x += delta * 0.015;
-    logoRef.current.rotation.y += 0.03;
+    // logoRef.current.rotation.y += 0.03;
     // logoRef.current.rotation.z += delta * 0.015;
+    logoRef.current.rotation.y = Math.sin(state.clock.elapsedTime);
   });
 
   return (
-    <a.group {...props} scale={[10, 10, 10]} ref={logoRef}>
+    <a.group {...props} scale={[5, 5, 5]} ref={logoRef}>
       <a.group position={[0, 0.025, 0]}>
         <mesh geometry={nodes["logo-Mat"].geometry} material={materials.Mat} />
         <mesh

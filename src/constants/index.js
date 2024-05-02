@@ -228,7 +228,7 @@ export const projects = [
     slug: "techpack",
   },
   {
-    coverImg: tec1,
+    coverImg: cam1,
     name: "Camera Monitoring",
     description: "Camera Monitoring.",
     portfolio: [cam1, cam2, cam3, cam4, cam5, cam6],

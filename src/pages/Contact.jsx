@@ -1,7 +1,6 @@
 import { useState, useRef, Suspense } from "react";
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
-import Fox from "../models/Fox";
 import LoaderCom from "../components/LoaderCom";
 import useAlert from "../hooks/useAlert";
 import { a } from "@react-spring/three";
@@ -109,12 +108,20 @@ const Contact = () => {
   const handleBlur = () => setCurrentAnimation("idle");
 
   return (
-    <section className="relative flex lg:flex-row flex-col max-container h-[100vh]">
+    <section className="relative flex lg:flex-row flex-col max-container h-[100vh] bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800">
       {/* Agr Alert.show true hai to Alert show krde */}
       {alert.show && <Alert {...alert} />}
 
       <div className="flex-1 min-w-[50%] flex flex-col">
-        <h1 className="head-text">Get In touch</h1>
+        <h1 className="head-text blue-gradient_text font-semibold">
+          Get In touch
+        </h1>
+        <p>
+          Get in Touch Ready to enhance the security of your property? Contact
+          us today to schedule a site assessment or inquire about our camera
+          monitoring services. Our friendly team is here to assist you every
+          step of the way.
+        </p>
         <form
           className="w-full flex flex-col gap-7 mt-14"
           onSubmit={handleSubmit}

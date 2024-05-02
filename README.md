@@ -515,6 +515,14 @@ useEffect(() => {
 - Dynamic Page khtm krke hmne yhn pe 4 routed pages bnalie hain aur wo routes hmne jo bnae hain wo hm directly access krskte hain.
 - uske ilawa hmne yh 4 alag routes create krdie hain services ke aur hm unke through ab directly access krskte hain page mein aur model create krdia hai hmne
 
+## AI Based Background Image:
+
+- Hm prompt ke through background mein image generate krrhe hain apne pass aur hm phr us image ko as a background use kreinge apne pass aur uske uper hm apna 3D model geenrate krdeinge apne pass aur phr hm us hisab se apni website ko bnadeinge bilkul sahi.
+- https://playground.com/create -- isse kreinge hm generate apne pass yh image.
+- Model -- Stable Diffusion XL -->> model ko hmne select krna hai.
+- Filter -- RealVis XL -->> ko hmne select krna hai filter ke liye.
+- Quality 30 pe select krni hai hmne aur phr hm prompt daleinge
+
 # Extra Learning:
 
 - Tailwind ki utility classes ko hmne use kra hai ismein all the way aur sbse phle hmne environment set krlia hai apne pass Tailwind.config.js ko update krke.
