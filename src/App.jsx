@@ -1,5 +1,11 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import VideoSplashScreen from "./components/VideoSplashScreen";
+
+// page transition ki animation run krne ke liye hm isko use krrhe hain framer-motion ko
+import { AnimatePresence } from "framer-motion";
+
 import {
   Home,
   About,
@@ -11,13 +17,6 @@ import {
   Techpack,
   CameraMonitoring,
 } from "./pages";
-
-// page transition ki animation run krne ke liye hm isko use krrhe hain framer-motion ko
-import { AnimatePresence } from "framer-motion";
-// import Portfolio from "./pages/Portfolio";
-import Footer from "./components/Footer";
-import { useEffect, useState } from "react";
-import VideoSplashScreen from "./components/VideoSplashScreen";
 
 // bg -- bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800
 

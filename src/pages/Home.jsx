@@ -14,7 +14,7 @@ import backgroundImage from "../assets/background_image/changedbg.jpg";
 // TO actually move the cube with the mouse
 import { Environment, Loader, OrbitControls } from "@react-three/drei";
 import transition from "../transition";
-import Navigation from "../components/Navigation";
+import Navigation from "../components/Navigation/Navigation";
 
 const Home = () => {
   // State to manage when the screen opens and it closes

@@ -311,3 +311,10 @@ body:has(.card[data-color="green"]:hover) {
   -webkit-background-clip: text;
   color: transparent;
 }
+
+/* creating utility for the homepage */
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
+  }
+}

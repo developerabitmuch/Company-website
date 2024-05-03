@@ -1,16 +1,15 @@
 import { skills, experiences } from "../constants";
 
 // Importing Timeline Elements to use them to create the timeline
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+// import {
+//   VerticalTimeline,
+//   VerticalTimelineElement,
+// } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import CTA from "../components/CTA";
 import transition from "../transition";
 import { motion } from "framer-motion";
 
-// . About Us Page: About [Your Company Name] At [Your Company Name], we are dedicated to providing top-notch security solutions to our clients. With years of experience in the industry, our team of experts is committed to delivering reliable, professional, and efficient camera monitoring services. We prioritize customer satisfaction and strive to exceed expectations with every project. When you choose [Your Company Name], you can trust that your property and assets are in safe hands.
 const About = () => {
   return (
     <section className="max-container overflow-hidden bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800">

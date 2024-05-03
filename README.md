@@ -530,6 +530,14 @@ useEffect(() => {
 - We use a timeout (same duration as the video length, adjust accordingly) to ensure navigation in case the onEnded fails or if there is any other issue.
 - The video fills the entire screen, and no controls are displayed.
 
+## Home Screen Button and Animation:
+
+- bech mein rotating logo hoga hmara aur side pe hmare pass button hnge jo animated hnge aur is trhn se wo move krrhe hnge hmare pass buttons.
+- https://lucide.dev/icons/ -- lucide-react ke package ko use krke hm lerhe hain isko - we just have to copy the JSX element and copy it in our component just.
+- shadow-glass-inset -- isse shadow aya hai jo hmne config mein bnai hai yh class isse
+- hover:shadow-glass-sm -- hover pe glass-sm shadow hojaega yh hmare pass.
+- animate-spin-slow-reverse -- reverse animation bhi bnai hai hmne ismein ke jab yh move krrha hai to yh reverse hojaega hmare pass -- icons ko reverse still rkhne ke liye hmne yh reverse animation bnai hai aur yh dono customised animation hain hmari tailwind.config.js ki file ke andar all the way.
+
 # Extra Learning:
 
 - Tailwind ki utility classes ko hmne use kra hai ismein all the way aur sbse phle hmne environment set krlia hai apne pass Tailwind.config.js ko update krke.
@@ -580,3 +588,5 @@ useEffect(() => {
 - .gltf file ko bhi hm use krskte hain apne pass all the way.
 - OrbitControls ke andar hm apne parameters dal skte hain according to our requirement hm apne controls ko adjust kr skte hain jese ke camera ko aur phr hm us hisab se apna scene create krskte hain.
 - <OrbitControls minAzimuthAngle={-Math.PI/4} maxAzimuthAngle={Math.PI/4} minPolarAngle={0} maxPolarAngle={Math.PI/2} minDistance={2} maxDistance={15}/> --- in attributes ke through hm apne camera ko control krkste hain according to our requirement all the way.
+- "\_blank" opens the linked document in a new tab or window. -- "\_self" opens the linked document in the same tab or window.
+-
