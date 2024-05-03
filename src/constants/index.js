@@ -66,6 +66,7 @@ import cam3 from "../portfolio_assets/camera_monitoring/cam3.png";
 import cam4 from "../portfolio_assets/camera_monitoring/cam4.png";
 import cam5 from "../portfolio_assets/camera_monitoring/cam5.png";
 import cam6 from "../portfolio_assets/camera_monitoring/cam6.png";
+import cam7 from "../portfolio_assets/camera_monitoring/cam7.png";
 
 // Skills ka data hai ismein hmare pass
 export const skills = [
@@ -228,10 +229,11 @@ export const projects = [
     slug: "techpack",
   },
   {
-    coverImg: cam1,
+    coverImg: cam7,
     name: "Camera Monitoring",
-    description: "Camera Monitoring.",
-    portfolio: [cam1, cam2, cam3, cam4, cam5, cam6],
+    description:
+      "Camera monitoring involves the use of video cameras to observe, record, and analyze environments and activities, providing real-time surveillance and enhanced security. ",
+    portfolio: [cam1, cam2, cam3, cam4, cam5, cam6, cam7],
     slug: "camera-monitoring-service",
   },
   // {

@@ -11,7 +11,7 @@ const Services = () => {
   console.log("Projects: ", projects);
 
   return (
-    <main className="w-full px-40 py-10 min-h-screen overflow-hidden">
+    <main className="w-full px-40 py-10 min-h-screen overflow-hidden bg-gradient-to-tr from-blue-800 via-blue-200 to-blue-800">
       {/* It is the main section and inside we have 2divs and those 2 are having the same space and we will be giving it using the flex-1 */}
       <section className="w-full h-full  flex  ">
         {/* It will have the data inside it in the text form */}

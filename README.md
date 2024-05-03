@@ -523,6 +523,13 @@ useEffect(() => {
 - Filter -- RealVis XL -->> ko hmne select krna hai filter ke liye.
 - Quality 30 pe select krni hai hmne aur phr hm prompt daleinge
 
+## Loader Video on the screen:
+
+- The video is set to autoplay and muted (required for autoplay in most browsers).
+- The onEnded event redirects to the home page after the video ends.
+- We use a timeout (same duration as the video length, adjust accordingly) to ensure navigation in case the onEnded fails or if there is any other issue.
+- The video fills the entire screen, and no controls are displayed.
+
 # Extra Learning:
 
 - Tailwind ki utility classes ko hmne use kra hai ismein all the way aur sbse phle hmne environment set krlia hai apne pass Tailwind.config.js ko update krke.
